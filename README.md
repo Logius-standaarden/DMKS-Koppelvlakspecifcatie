@@ -1,6 +1,5 @@
-# Template voor een standaard
+# Digimelding Koppelvlakspecificatie
 
-Gebruik deze template repository voor nieuwe specificaties
-zie 
-
-- html voorbeeld: https://logius-standaarden.github.io/Template-Repository/
+- html: https://logius-standaarden.github.io/DMKS-Koppelvlakspecifcatie/
+- html(static): https://logius-standaarden.github.io/DMKS-Koppelvlakspecifcatie/snapshot.html
+- PDF-versie: https://github.com/Logius-standaarden/DMKS-Koppelvlakspecifcatie/blob/master/DMKS-Koppelvlakspecifcatie.pdf
