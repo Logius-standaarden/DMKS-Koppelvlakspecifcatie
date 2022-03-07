@@ -3,7 +3,7 @@ var respecConfig = {
   // see https://github.com/Logius-standaarden/respec/wiki for all options
 
   // specStatus currently supported
-  // WW, GN-WV: Werkversie
+  // WV, GN-WV: Werkversie
   // CV, GN-CV: Consultatie versie
   // VV, GN-VV: Vastgestelde versie (of Versie ter vaststelling)
   // DEF, GN-DEF: Definitieve versie
@@ -24,13 +24,13 @@ var respecConfig = {
   // BP: "Best Practice"
   specType: "HR",
 
-  // subtitle will be shown below title, can be omitted 
-  subtitle: "Hier komt een subtitle",
+  // subtitle will be shown below title, can be omitted
+  subtitle: "Handreiking",
 
   // The specification's "short name", which is the name used in NL_Respec URLs
-  shortName: "digikoppeling",
+  shortName: "digimelding-koppelvlak",
 
-  // A YYYY-MM-DD date. The publication date of the present document. 
+  // A YYYY-MM-DD date. The publication date of the present document.
   // Als er geen publishDate is opgegeven, genereert ReSpec de dataum o.b.v. de laatste wijzigingen
   // Belangrijk: als publishDate niet opgegeven is, wordt bij de link "Laatst gepubliceerde versie" "geen" gezet. Anders wordt een link opgebouwd voor de laatste versie, met het formaat:
   publishDate: "2021-02-19",
@@ -47,7 +47,7 @@ var respecConfig = {
 
   // Overrides the standard logo with one or more other logos. (see https://respec.org/docs/#logos)
   // Geef een lege array op als er geen <default> logo moet staan
-  // logos: [], 
+  // logos: [],
 
   //Adds a JSON-LD script element containing schema.org information, which can be useful for search engines.
   doJsonLd: true,
@@ -60,7 +60,7 @@ var respecConfig = {
     company: "Logius",
   },
   {
-    name: "Pieter Hering",
+    name: "Edwin Wisse",
     url: "https://logius.nl/standaarden",
     company: "Logius",
   }
@@ -74,7 +74,7 @@ var respecConfig = {
   }
   ],
   // The github option allows you associate your specification with a repository on GitHub.
-  github: "https://github.com/Logius-standaarden/Template-Repository",
+  github: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie",
 
   // The URL of your test suite, gets included in the specification's headers.
   // testSuiteURI: "https://portaal.digikoppeling.nl/CV/home.html",
@@ -129,19 +129,19 @@ var respecConfig = {
 
   // in some cases the Repository of a Specification document and the Issue- and PR bases are split
   // thi scan be configured below
-  // if not set, the url's will be generated on the respecConfig.github automatically  
+  // if not set, the url's will be generated on the respecConfig.github automatically
   nl_github: {
-    issueBase: "https://github.com/Logius-standaarden/Template-Repository/issues",
-    revision: "https://github.com/Logius-standaarden/Template-Repository/commits",
-    pullrequests: "https://github.com/Logius-standaarden/Logius-standaarden/Template-Repository/pulls"
+    // issueBase: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/issues",
+    revision: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/commits",
+    // pullrequests: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/Template-Repository/pulls"
   },
 
   // nl_organisationName is used for some company specific values in the header (and Sotd)
-  // currently supported: Logius and Geonovum (default)  
+  // currently supported: Logius and Geonovum (default)
   nl_organisationName: "Logius",
 
   // prefix for the names of company specific css, svg and ico prefixes
-  // defaults to "GN-"  
+  // defaults to "GN-"
   nl_organisationPrefix: "LS-",
 
   // class style can be automatically insertd in generated markdown tables
@@ -173,7 +173,7 @@ var respecConfig = {
     url: "https://www.logius.nl/standaarden",
   },
 
-  // If you need to include a one-off reference that isn't in the SpecRef database or 
+  // If you need to include a one-off reference that isn't in the SpecRef database or
   // if you need to override an existing reference with specific content, then you can use this configuration option.
   localBiblio: {
     NEN3610: {
