@@ -3,11 +3,11 @@
 
 ## Achtergrond
 
-Voor terugmeldvoorzieningen in het algemeen is de DMKS
-(Digimelding-koppelvlakspecificatie) opgesteld, waarin wordt
+Voor terugmeldvoorzieningen in het algemeen is de Digimelding
+Koppelvlakspecificatie (DMKS) opgesteld, waarin wordt
 gespecificeerd hoe terugmeldingen verzonden dienen te worden. De
 webservices waarmee gemeentelijke pakketleveranciers geautomatiseerde
-terugmeldingen kunnen doen zijn ook gebaseerd op DMKS.
+terugmeldingen kunnen doen zijn ook gebaseerd op Digimelding.
 
 De volgende partijen hebben meegewerkt aan de totstandkoming van dit
 document: Gemeente Amsterdam, Centric, Gemeente Den Haag, Gemeente
