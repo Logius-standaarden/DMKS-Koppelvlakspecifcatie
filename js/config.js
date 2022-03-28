@@ -74,7 +74,7 @@ var respecConfig = {
   }
   ],
   // The github option allows you associate your specification with a repository on GitHub.
-  github: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie",
+  github: "https://github.com/Logius-standaarden/Digimelding-Koppelvlakspecificatie",
 
   // The URL of your test suite, gets included in the specification's headers.
   // testSuiteURI: "https://portaal.digikoppeling.nl/CV/home.html",
@@ -132,7 +132,7 @@ var respecConfig = {
   // if not set, the url's will be generated on the respecConfig.github automatically
   nl_github: {
     // issueBase: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/issues",
-    revision: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/commits",
+    revision: "https://github.com/Logius-standaarden/Digimelding-Koppelvlakspecificatie/commits",
     // pullrequests: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/Template-Repository/pulls"
   },
 
