@@ -1,4 +1,234 @@
-# Specificaties Services
+Colofon
+
++------------------------+--------------------------------+
+| Logius Servicecentrum: | Postbus 96810                  |
+|                        |                                |
+|                        | 2509 JE Den Haag               |
+|                        |                                |
+|                        | t\. 0900 555 4555 (10 ct p/m)  |
+|                        |                                |
+|                        | e\. <servicecentrum@logius.nl> |
++========================+================================+
+|                        |                                |
++------------------------+--------------------------------+
+
+Documentbeheer
+
+  Datum        Versie   Auteur   Opmerkingen
+  ------------ -------- -------- -------------------------------------------------------
+  13-02-2015   0.1      Logius   Eerste concept
+               0.2               
+  28-10-2015   0.9      Logius   Diverse spellingsverbeteringen.
+  31-03-2016   0.91     Logius   Aanpassingen n.a.v. bevindingen pilot
+  30-03-2016   1.0      Logius   Definitief na goedkeuring Afnemersraad
+  14-05-2018   1.1      Logius   RFC Behandelend Bronhouder
+  21-11-2019   1.2      Logius   Zie release notes
+  24-06-2020   1.2.1    Logius   Tekstuele aanpassingen / correcties
+  01-06-2021   1.3      Logius   RFC-2020-3 - SSOn-Rijk gebruik in Digimelding Portaal
+
+Inleiding
+=========
+
+Achtergrond
+-----------
+
+Voor terugmeldvoorzieningen in het algemeen is de DMKS
+(Digimelding-koppelvlakspecificatie) opgesteld, waarin wordt
+gespecificeerd hoe terugmeldingen verzonden dienen te worden. De
+webservices waarmee gemeentelijke pakketleveranciers geautomatiseerde
+terugmeldingen kunnen doen zijn ook gebaseerd op DMKS.
+
+De volgende partijen hebben meegewerkt aan de totstandkoming van dit
+document: Gemeente Amsterdam, Centric, Gemeente Den Haag, Gemeente
+Rotterdam, ICTU, Kamer van Koophandel, KING, Logius, PinkRoccade, Vicrea
+en de Waarderingskamer.
+
+Bronverwijzing en referentiedocumenten
+--------------------------------------
+
+  Referentiedocument                 Bronverwijzing
+  ---------------------------------- ----------------------------------------------------------------------------------------------
+  GEMMA Informatiearchitectuur 1.0   http://www.noraonline.nl/images/noraonline/a/a3/GEMMA\_Informatiearchitectuur\_v10\_KING.pdf
+  StUF 3.01                          http://www.gemmaonline.nl/index.php/StUF\_Berichtenstandaard
+  StUF protocolbindingen 3.02        http://www.gemmaonline.nl/index.php/StUF\_Berichtenstandaard
+  ArchiMate 2.n                      [The Open Group Website \|](https://www.opengroup.org/)
+  DMKS cookiebox                     [https://www.logius.nl/diensten/Digimelding/](https://www.logius.nl/diensten/digimelding/)
+  Digikoppeling WUS 3.0              <https://publicatie.centrumvoorstandaarden.nl/dk/wus/>
+  Digikoppeling-architectuur         https://publicatie.centrumvoorstandaarden.nl/dk/architectuur/
+
+Functionaliteit op hoofdlijnen en architectuur
+==============================================
+
+Deze specificatie geeft een technische en functionele beschrijving van
+een aantal services voor het uitwisselen van informatie tussen
+terugmeldapplicaties, Digimelding Webservice en landelijke voorzieningen
+van basisregistraties
+
+De beschreven services zorgen ervoor dat de informatie op een standaard
+manier wordt uitgewisseld.
+
+In de volgende paragraaf wordt ingegaan op hoe de services zich
+verhouden tot de NORA-informatiearchitectuur en welke standaarden worden
+gebruikt. Vervolgens wordt dieper ingegaan op de functionaliteit die
+deze services moeten bieden.
+
+Referentiearchitectuur
+----------------------
+
+In deze specificatie wordt uitgegaan van een referentiearchitectuur.
+
+![](media/media/image1.png){width="5.986629483814523in"
+height="3.164179790026247in"}
+
+Figuur 1. De referentiearchitectuur.
+
+In figuur 1 is de referentie-applicatiearchitectuur weergegeven. Deze
+gaat uit van een generiek overheidsperspectief, waarbij wordt
+teruggemeld op meerdere basisregistraties en het dus handig is om
+gebruik te maken van de routering door Digimelding Webservice. Het is
+ook mogelijk om als afnemer direct aan te sluiten op de TMV van een
+basisregistratie. De specificaties van de services in hoofdstuk 6 laten
+beide varianten toe.
+
+Aangaande deze catalogusvoorziening kunnen de verschillende catalogi ook
+als bestanden beschikbaar gesteld worden aan de terugmeldende
+organisaties voor implementaties in de eigen terugmeldapplicatie.
+
+Aan deze specificatie wordt voldaan indien de in hoofdstuk 4 beschreven
+services, voor zover deze relevant zijn voor de betreffende applicatie,
+worden ondersteund.
+
+Aanvullend geldt dat er een aantal implementatievarianten zijn.
+
+  Implementatie�variant   Specifieke en aanvullende eisen
+  ----------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  A1                      De terugmeldende ambtenaar maakt gebruik van het landelijke Digimelding Webservice portaal.
+  A2                      De terugmeldende ambtenaar maakt gebruik van een lokaal binnen de organisatie geïnstalleerd terugmeldportaal welke middels webservices communiceert
+  A3                      De terugmeldende ambtenaar maakt gebruik van een terugmeldoptie binnen zijn taakapplicatie; de taakapplicatie zet deze terugmelding door naar een terugmeldapplicatie binnen de organisatie welke middels webservices communiceert.
+  B1                      De communicatie middels webservices tussen terugmeldende organisatie en landelijke voorziening van een basisregistratie loopt via een webservices koppelvlak op de Digimelding Webservice, als landelijke voorziening. Deze landelijke voorziening verzorgt routering naar basisregistraties (en mogelijk protocoltransformatie naar een vorige of volgende versie van het koppelvlak).
+  B2                      De communicatie middels webservices tussen terugmeldende organisatie en landelijke voorziening van een basisregistratie loopt rechtstreeks (staat niet geïllustreerd in referentieplaatje hierboven).
+
+Beveiliging, autorisatie en protocollen
+=======================================
+
+Authenticatie en autorisatie
+----------------------------
+
+Binnen de Digimelding-keten vindt op meerdere plaatsen authenticatie en
+autorisatie plaats.
+
+In deze sectie wordt uitgelegd welke verschillende middelen er zijn en
+in welke stap ze gebruikt worden. Binnen Digimelding vinden
+authenticatie en autorisatie plaats op transportniveau, applicatieniveau
+en soms op persoonsniveau. Transport en logistiek gaan via de
+Digikoppeling-standaarden.
+
+Op applicatieniveau gaat het over de terugmeldapplicatie van de afnemer,
+Digimelding Webservice en TMVs van basisregistraties.
+
+Persoonsniveau komt voor bij Digimelding Portaal en mogelijkerwijs bij
+nog te ontwikkelen andere oplossingen die gebruik maken van eHerkenning
+of SSOn Rijk. Daarnaast kent een afnemende organisatie ook nog interne
+authenticatie en autorisatie voor het verkrijgen van toegang door de
+terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
+specificatie.
+
+![](media/image2.png){width="4.715277777777778in"
+height="1.0243055555555556in"}
+
++----------------+----------------+----------------+----------------+
+| *              |                |                |                |
+| *Autorisatie** |                |                |                |
++================+================+================+================+
+| *              | **Terugmeld\   | **             | **TMV\         |
+| *Terugmelder** | Applicatie**   | Digikoppeling\ | Basi           |
+|                |                | Adapter**      | sregistratie** |
++----------------+----------------+----------------+----------------+
+| \*             | \* OIN in DMKS | \* OIN in      | \* Transport   |
+| E-herkenning\  | bericht        | Digikoppeling  | via            |
+| in DMKS        |                |                |                |
+| bericht        | \* (PKIO       | Headers        | Digikoppeling  |
+|                | certificaat    | WS-Adressing   |                |
+| \_ OIN         |                |                | \* Applicatie: |
+|                | met OIN voor   | \* PKIO        |                |
+| \_             | signing)       | certificaat    | via OIN in     |
+| Vestigingsnr   |                |                | DMKS bericht   |
+|                | \* OIN in      | met OIN voor   |                |
+| \_             | Digikoppeling  | TLS/signing    | of             |
+| Pers           |                |                |                |
+| oonsaanduiding | Header         |                | via            |
+|                | WS-security    |                | E-Herkenning : |
+| \* SSOn Rijk   |                |                | OIN,           |
+|                |                |                |                |
+| \_ OIN         |                |                | ve             |
+|                |                |                | stigingsnummer |
+| \_             |                |                | en             |
+| Vestigingsnr   |                |                |                |
+|                |                |                | pers           |
+| \_             |                |                | oonsaanduiding |
+| Pers           |                |                | in             |
+| oonsaanduiding |                |                |                |
+|                |                |                | DMKS bericht   |
+| \* Vrije keuze |                |                |                |
+|                |                |                | of             |
+|                |                |                |                |
+|                |                |                | via SSOn Rijk  |
+|                |                |                | attributen     |
++----------------+----------------+----------------+----------------+
+
+Figuur 2. Authenticatie en autorisatie bij Digimelding
+
+Indien in de keten de terugmelder met eHerkenning geauthenticeerd wordt,
+willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
+dienen de eHerkenningsgegevens ( 'OIN'[^1], 'vestigingsnummer' en
+'pseudoID' van de natuurlijk persoon(ontvangen via een SAML-token) in
+het DMKS-bericht doorgegeven te worden. In deze gevallen is de
+autorisatie voor de TMV-applicatie geregeld middels eHerkenning op
+persoonsniveau.
+
+Indien in de keten de terugmelder met SSOn-Rijk geauthenticeerd wordt,
+willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
+dienen de gegevens ('OIN', en 'pseudoID' ) van de natuurlijk persoon
+(ontvangen via een SAML-token) in het DMKS-bericht doorgegeven te
+worden. In deze gevallen is de autorisatie voor de TMV-applicatie
+geregeld middels SSOn-Rijk op persoonsniveau.
+
+In het geval dat er geen authenticatie op Persoonssniveau plaatsvindt,
+worden authenticatie en autorisatie op applicatieniveau gedaan op basis
+van het OIN van de afnemende organisatie. Dit is het OIN dat een
+organisatie krijgt wanneer deze zich aanmeldt voor Digikoppeling en is
+terug te vinden in het OIN-register van Logius. Dit OIN wordt opgenomen
+in het DMKS-bericht.
+
+Indien de basisregistratie er om vraagt kan als extra
+authenticatiemiddel signing van het DMKS-bericht met een
+PKIoverheidcertificaat worden gevraagd. Dit certificaat dient van de
+afnemende organisatie te zijn en het OIN te bevatten zoals uitgegeven
+toen de organisatie zich aanmeldde voor Digikoppeling.
+
+Op transportniveau wordt geautoriseerd op het OIN dat door de
+Digikoppeling-adapter van de afnemende organisatie wordt gebruikt. Dit
+wordt gebruikt in de Digikoppeling headers WS-Addressing (WUS) en
+PartyID (ebMS) en in het PKIoverheidscertificaat dat voor transport
+beveiliging (TLS) wordt gebruikt. Dit is niet altijd het OIN van de
+organisatie zelf! Bij sectorale knooppunten, SaaS-oplossingen en
+samenwerkingsverbanden kan dit mogelijk een ander OIN zijn. De interne
+authenticatie en autorisatie (indien anders dan eHerkenning/SSOn-Rijk)
+is volledig vrij door de afnemende organisatie in te vullen. Hiervan
+hoeft niets meegegeven te worden in DMKS-berichten.
+
+**Protocollen**
+
+Bij synchrone communicatie wordt gebruik gemaakt van Digikoppeling WUS
+volgens het '2W-be'-profiel[^2] met ondersteuning voor MTOM voor
+efficiënt transport van attachments.
+
+Indien een basisregistratie verzoekt om een authenticatie van de
+terugmeldende organisatie wordt bij synchrone communicatie gebruikt
+gemaakt van WUS Profiel Digikoppeling 2W-be-S[^3].
+
+Specificaties Services 
+======================
 
 Dit hoofdstuk beschrijft de berichten tussen terugmeldapplicatie,
 Digimelding Webservice en de LV van basisregistraties (gerouteerd via
@@ -26,7 +256,8 @@ Per bericht wordt aangegeven (indien relevant):
 Tevens wordt bij de berichten een interactiediagram getoond waarin
 duidelijk wordt welk systeem het bericht initieert.
 
-## Annotaties Algemeen
+Annotaties Algemeen
+-------------------
 
 De Digimelding-koppelvlakspecificatie (DMKS) die de basis vormt voor dit
 koppelvlak gaat uit van annotaties. Alle informatie over een
@@ -99,7 +330,8 @@ annotatiebasis bevat.
 
  {#section .list-paragraph}
 
-## Annotatie versturen
+Annotatie versturen 
+-------------------
 
 De berichten beschreven in deze uitwisseling worden gebruikt om:
 
@@ -217,7 +449,7 @@ Figuur 5. Interactiediagram status wijzigen
 verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
 één van de twee.
 
-#### Annotatie toevoegen (terugmelden)
+**Annotatie toevoegen (terugmelden)**
 
 De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:
@@ -376,7 +608,7 @@ als volgt:
 | *De gewenste bronhouder*                                |           |
 +---------------------------------------------------------+-----------+
 
-#### Annotatie toevoegen (intrekken)
+**Annotatie toevoegen (intrekken)**
 
 De volgende structuur is in de XML-structuur child van de 'Annotatie'.
 
@@ -474,7 +706,9 @@ Planningsverwachting, Contactinformatie en Behandelendbronhouder
 (hiermee kan bij de statuswijziging *"Verkeerde Bronhouder"* de gewenste
 bronhouder worden aangegeven).
 
-#### Annotatie toevoegen (aanpassing)
+**Annotatie toevoegen (aanpassing)**
+
+### AnnotatieToevoegenResponse
 
 Het antwoord op het toevoegen van een annotatie of het nu een
 annotatieboom met volledige terugmelding is of een annotatie voor een
@@ -500,7 +734,8 @@ goede orde ontvangen heeft.
 | > betrekking op heeft.*                                  |          |
 +----------------------------------------------------------+----------+
 
-## Status bevragen
+Status bevragen
+---------------
 
 Deze interactie wordt gebruikt door de afnemer om meer informatie te
 verkrijgen over de door zijn organisatie gedane terugmeldingen en de
@@ -960,7 +1195,8 @@ Planningsverwachting en BehandelendeBronhouder.
 | > behandeling heeft.*                                   |           |
 +---------------------------------------------------------+-----------+
 
-## Echo
+Echo
+----
 
 De berichten beschreven in deze uitwisseling kunnen worden gebruikt om
 te controleren of de berichtverwerking in zijn algemeenheid beschikbaar
@@ -1032,3 +1268,266 @@ De structuur van het echo-antwoord is als volgt:
 |                               |          |
 | De teruggestuurde echo string |          |
 +-------------------------------+----------+
+
+Foutberichten 
+=============
+
+  ---------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Doel             Aangeven dat er een fout is opgetreden.
+  Voorwaarde       Een foutbericht is altijd een reactie op een reeds verzonden bericht, dus één van de vraagberichten uit de voorgaande secties (AnnotatieToevoegenRequest, StatusoverzichtRequest, DetailsTerugmeldingRequest).
+  Trigger          Het verzonden vraagbericht leidt tot een fout in de verwerking ervan.
+  Direct gevolg    Een foutbericht wordt verstuurd.
+  Vervolgactie     De ontvanger van het foutbericht dient de fout af te handelen.
+  Bijzonderheden   
+  ---------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Een aantal foutsituaties is voorstelbaar. Er kan een probleem zijn met
+autorisatie, met de syntax van de gegevens of er kan een fout optreden
+in het systeem dat de annotatie moet verwerken.
+
+Autorisatiefouten
+-----------------
+
+Wanneer een systeem van de afnemer op transportniveau of
+applicatieniveau niet geautoriseerd is bij het leverende systeem dan
+krijgt deze een Digikoppeling-foutmelding 'niet geautoriseerd' terug.
+
+Optioneel kan de basisregistratie in de SOAP Fault-detail meer
+informatie verstrekken.\
+Indien een basisregistratie een eigen specifiekere foutcode heeft dan
+mag deze ook verzonden worden in plaats van de Digikoppeling-melding.
+
+Verwerkingsfouten
+-----------------
+
+In het geval dat een verwerkingsfout er toe leidt dat een antwoord
+volledig uitblijft, bijvoorbeeld door het offline zijn van het
+verwerkende systeem, dan zal de Digikoppeling-adapter van de afnemer een
+time-out geven.
+
+Indien het bevraagde systeem het bericht niet kan verwerken door een
+systeemfout maar nog wel kan antwoorden, dan krijgt de afnemer een SOAP
+Fault-bericht terug met de Digikoppeling-fout DK0051 (time-out),
+optioneel kan de basisregistratie in de SOAP Fault-detail meer
+informatie verstrekken. Wanneer het bericht niet verwerkt kan worden
+vanwege een probleem met de inhoud van het bericht, anders dan de
+syntax, dan wordt een DK0050-bericht ('kan bericht niet verwerken')
+verstuurd. Indien een basisregistratie een eigen specifieke foutcode
+heeft dan mag deze in plaats van de Digikoppeling-foutmelding verstuurd
+worden.
+
+Syntaxfouten
+------------
+
+Indien er een syntaxfout zit in de Digikoppeling-headers, dan volgt
+hierop een SOAP Fault met de juiste foutcode volgens de
+Digikoppelingstandaard (er bestaan specifieke foutcodes voor fouten in
+headervelden).
+
+Indien de inhoud van het vraagbericht niet voldoet aan de syntax van het
+vraagbericht-XSD of een andere XSD die over de inhoud van het bericht
+gaat dan wordt een SOAP Fault verstuurd; deze heeft als code DK0004
+('element niet conform XSD'). In de SOAP Fault-detail wordt door de
+basisregistratie aangegeven tegen welke XSD het bericht niet valideerde.
+Optioneel is de basisregistratie vrij om nog meer informatie mee te
+geven in de toelichting. Indien een basisregistratie een eigen
+specifieke foutcode heeft dan mag deze in plaats van de
+Digikoppeling-foutcode verstuurd worden.
+
+Synchrone fouten voor Digikoppeling-WUS-berichten worden verstuurd als
+SOAP Fault zoals dit is voorgesteld voor de berichtenstandaard van het
+stelsel.[^4] SOAP Faults worden doorgaans door de Digikoppeling-adapter
+doorgestuurd naar de achterliggende applicatie. Dit koppelvlak gaat er
+vanuit dat dit ook gebeurt voor de fouten die hier beschreven worden. De
+foutafhandeling dient in de terugmeldapplicatie plaats te vinden. Binnen
+de SOAP Fault wordt een aantal velden onderkend te weten:
+
++---------------------------------------------------------+-----------+
+| **Berichttype**: DigimeldingSynchroonFault              |           |
+|                                                         |           |
+| *Synchrone foutafhandeling gaat middels een SOAP Fault* |           |
++=========================================================+===========+
+|                                                         |           |
++---------------------------------------------------------+-----------+
+| faultcode                                               | \[1..1\]  |
+|                                                         |           |
+| *De plek waar de fout is opgetreden, één string         |           |
+| opgebouwd uit de elementen                              |           |
+| \<Defaultwaarde\>.\<Code\>.\<OmschrijvingKort\> :*      |           |
+|                                                         |           |
+| Defaultwaarde\                                          |           |
+| *Bevat één van de defaultwaarden VersionMismatch,       |           |
+| MustUnderstand, Client en Server.*[^6] *Voor            |           |
+| Digimeldingpraktijk zijn alleen Client- of              |           |
+| Server-waarden relevant om aan te geven wat de aard van |           |
+| de fout is.*                                            |           |
+|                                                         |           |
+| Code\                                                   |           |
+| *De specifieke foutcode die hoort bij de technische     |           |
+| fout (format: \<afkortingbron\>\<codering van fout\>.*  |           |
+|                                                         |           |
+| OmschrijvingKort *\                                     |           |
+| De korte omschrijving van de fout (bijvoorbeeld: de     |           |
+| Digikoppeling omschrijving uit de lijst met             |           |
+| foutmeldingen.*                                         |           |
+|                                                         |           |
+| Voorbeeld:\<soap:Fault\>                                |           |
+| \<fa                                                    |           |
+| ultcode\>*soap:Server*\</faultcode\>                    |           |
+| \                                                       |           |
+| <faultstring\>*Fout*\</faultstring\>                    |           |
+| \<detail\>                                              |           |
+| **\<DigimeldingSynchroonFault**                         |           |
+| xmlns=\"h                                               |           |
+| ttp://webservices.digimelding.nl/dmks/cookiebox/\"\>    |           |
+|                                                         |           |
+| \<faultcode\>*001*\</faultcode\>                        |           |
+|                                                         |           |
+| \<faultstring\>*Foutmelding*                            |           |
+| \</faultstring\>                                        |           |
+|                                                         |           |
+| \<faultactor\>*Actor*\</faultactor\>                    |           |
+|                                                         |           |
+| \<faultdetail/\>                                        |           |
+| **\</DigimeldingSynchroonFault\>**                      |           |
+| \</detail\>\</soap:Fault\>                              |           |
++---------------------------------------------------------+-----------+
+| faultstring                                             | \[1..1\]  |
+|                                                         |           |
+| *De eigen meer gedetailleerde beschrijving van de       |           |
+| foutsituatie.*                                          |           |
+|                                                         |           |
+| *De eigen beschrijving zoveel mogelijk geschikt maken   |           |
+| voor het kunnen presenteren aan gebruiker.*             |           |
+|                                                         |           |
+| *De ontvanger is niet verplicht deze tekst over te      |           |
+| nemen.*                                                 |           |
++---------------------------------------------------------+-----------+
+| faultactor                                              | \[0..\*\] |
+|                                                         |           |
+| *Bevat een URI van de antwoordende service.*            |           |
+|                                                         |           |
+| *Vul de faultactor in met de URI van de bron van de     |           |
+| oorzaak, indien het SOAP-bericht langs een              |           |
+| tussenstation gaat. Bijvoorbeeld Digimelding            |           |
+| Webservice.*                                            |           |
++---------------------------------------------------------+-----------+
+| faultdetail                                             | \[0..\*\] |
+|                                                         |           |
+| *Volledig vrij veld om nadere toelichting op de fout te |           |
+| geven, kan gebruikt worden om bijv. achterliggende      |           |
+| applicatiefoutmeldingen mee te geven (xs:any).*         |           |
++---------------------------------------------------------+-----------+
+
+Voorbeeld:
+
+> \<soap:Fault\>
+>
+>                     \<faultcode\>*soap:Server*\</faultcode\>
+>
+>                     \<faultstring\>*Fout*\</faultstring\>
+>
+>                     \<detail\>
+>
+>                                        **\<DigimeldingSynchroonFault**
+> xmlns=\"<http://webservices.digimelding.nl/dmks/cookiebox/>\"\>
+>
+>                                                           
+> \<faultcode\>*001*\</faultcode\>
+>
+>                                                           
+> \<faultstring\>*Foutmelding* \</faultstring\>
+>
+>                                                           
+> \<faultactor\>*Actor*\</faultactor\>
+>
+>                                                           
+> \<faultdetail/\>
+>
+>                                       
+> **\</DigimeldingSynchroonFault\>**
+>
+>                     \</detail\>
+>
+> \</soap:Fault\>
+
+Generieke foutcodes van toepassing op Digimelding
+-------------------------------------------------
+
+Voor fouten op protocolniveau dienen de fouten van Digikoppeling gevolgd
+te worden. Voor generieke fouten in Digimelding zijn de volgende
+Digikoppeling-foutcodes van toepassing:
+
+  **Nr**   **Omschrijving**                            **Toelichting**
+  -------- ------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  DK0002   Requester systeem niet geautoriseerd        Indien je voor een basisregistratie niet geautoriseerd bent, ontvang je geen inhoudelijke informatie van die basisregistratie. Het autorisatiemodel wordt door de basisregistratie bepaald. In de foutmelding wordt de betreffende basisregistratie, waarvoor geen autorisatie bestaat, teruggegeven.
+  DK0004   Element niet conform XSD                    Bij een validatiefout wordt meegegeven in het SOAP Faultdetail aan welke XSD niet voldaan wordt.
+  DK0050   Proces voor afhandelen bericht geeft fout   Wanneer een bericht zich niet houdt aan afspraken die gemaakt zijn rondom de vulling van de payload welke basisregistratiespecifiek zijn, bijvoorbeeld: Status is volgens de XSD een vrij tekstveld, iedere basisregistratie is vrij deze te kiezen. De basisregistratie kan teruggeven dat een status bij hen niet bekend is.
+  DK0051   Antwoordend systeem geeft time-out          Indien de achterliggende applicatie niet draait of een fout produceert dan kan het geen antwoord geven terwijl een geldig antwoord wel mogelijk zou moeten zijn en de messaging stack(Digikoppeling) nog wel in de lucht is.
+
+**\
+**
+
+Bijlage A: Afkortingen, begrippen en symbolen {#bijlage-a-afkortingen-begrippen-en-symbolen .list-paragraph}
+=============================================
+
+  **Afkorting**   **Omschrijving**
+  --------------- -------------------------------------------
+  BAG             Basisregistratie Adressen en Gebouwen
+  BRP             Basisregistratie Personen
+  GEMMA           Gemeentelijke modelarchitectuur
+  ICTU            ICT Uitvoeringsorganisatie
+  KING            Kwaliteitsinstituut Nederlandse Gemeenten
+  HR              Handelsregister
+  NUP             Nationaal Uitvoeringsprogramma
+  StUF            Standaarduitwisselingsformaat
+
+**\
+**
+
+Bijlage B : Geadviseerde Statussen {#bijlage-b-geadviseerde-statussen .list-paragraph}
+==================================
+
+*Diagram*
+
+Op een terugmelding kunnen verschillende statussen van toepassing zijn.
+In onderstaand figuur zijn de verschillende statussen en hun relatie
+afgebeeld.
+
+*Definities*
+
+  naar                     *geen*   Gemeld   In behandeling   Ingetrokken   Onvoldoende informatie   Verkeerde Bronhouder   Ingepland   Afgehandeld   
+  ------------------------ -------- -------- ---------------- ------------- ------------------------ ---------------------- ----------- ------------- --
+  van                                                                                                                                                 
+  *Geen*                            x                                                                                                                 
+  Gemeld                                     x                x             x                        x                                                
+  In behandeling                                              x                                                             x           x             
+  Ingetrokken                                                                                                                                         
+  Onvoldoende informatie                                                                                                                              
+  Verkeerde Bronhouder              x                         x                                       x                                               
+  Ingepland                                                                                                                             x             
+  Afgehandeld                                                                                                                                         
+                                                                                                                                                      
+  Eindstatus                                                                                                                                          
+  overgang mogelijk        X                                                                                                                          
+
+[^1]: De eHerkenningmiddelenleverancier stuurt een SAML token terug met
+    daarin o.a. het 'OIN' zoals in de eHerkenningskoppelvlakstandaard is
+    gespecificeerd. Dit 'OIN' met een prefix 00000003 is niet gelijk aan
+    het door Logius uitgegeven OIN zoals in het OIN-register is
+    opgenomen.
+
+[^2]: Best Effort, beveiligd met tweezijdige TLS
+
+[^3]: Best Effort, beveiligd met tweezijdige TLS en gesigneerde
+    berichten
+
+[^4]: Zie voorstel "foutafhandeling synchrone berichten" van de
+    "gemeenschappelijke afspraken berichtstandaarden"
+    <https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab>
+
+[^5]: Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1
+    voor uitleg
+
+[^6]: Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1
+    voor uitleg
