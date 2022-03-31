@@ -91,6 +91,13 @@ var respecConfig = {
   // A number indicating the maximum depth of the table of contents. Defaults to 0 which includes all levels.
   // maxTocLevel: 3,
 
+  // PDF version
+  alternateFormats: [
+    {
+      label: "pdf",
+      uri: "Digimelding-Koppelvlakspecificatie.pdf",
+    },
+    ],
   // Shows links to alternate formats (such as PDF, ePub) in the document header.
   // alternateFormats: [{
   //     label: "html",
@@ -125,7 +132,7 @@ var respecConfig = {
 
   // if you use a single document for your spec, which uses more than one markdown H1 header, e.g. '# inleiding'
   // this configuration can be set to make sure that the alle H1 headers and navigation bars are preserved
-  nl_markdownSplitH1sections: true,
+  // nl_markdownSplitH1sections: true,
 
   // in some cases the Repository of a Specification document and the Issue- and PR bases are split
   // thi scan be configured below
