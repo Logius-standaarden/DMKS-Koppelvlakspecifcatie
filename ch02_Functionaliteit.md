@@ -18,7 +18,7 @@ deze services moeten bieden.
 
 In deze specificatie wordt uitgegaan van een referentiearchitectuur.
 
-![De referentiearchitectuur](media/image1.png){width="5.986629483814523in"
+![De referentiearchitectuur](images/image1.png){width="5.986629483814523in"
 height="3.164179790026247in"}
 
 In figuur 1 is de referentie-applicatiearchitectuur weergegeven. Deze

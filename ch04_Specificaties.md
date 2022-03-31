@@ -166,21 +166,14 @@ De berichten beschreven in deze uitwisseling worden gebruikt om:
 
 ### Scenario's Communicatie
 
-![Figuur 3.png](media/media/image3.png){width="4.7243055555555555in"
+![Interactiediagram terugmelden/intrekken direct](images/image3.png "Interactiediagram terugmelden/intrekken direct"){width="4.7243055555555555in"
 height="1.9756944444444444in"}
 
-Figuur 3. Interactiediagram terugmelden/intrekken direct
-
-![fig4.png](media/media/image4.png){width="4.7243055555555555in"
+![Interactiediagram terugmelden/intrekken via Digimelding Webservice](images/image4.png "Interactiediagram terugmelden/intrekken via Digimelding Webservice"){width="4.7243055555555555in"
 height="1.6215277777777777in"}
 
-Figuur 4. Interactiediagram terugmelden/intrekken via Digimelding
-Webservice
-
-![](media/media/image5.emf){width="3.167361111111111in"
+![Interactiediagram status wijzigen](images/image5.emf "Interactiediagram status wijzigen"){width="3.167361111111111in"
 height="1.910890201224847in"}
-
-Figuur 5. Interactiediagram status wijzigen
 
 ### Inhoud bericht Annotatie ToevoegenRequest
 
@@ -526,15 +519,10 @@ en Bronhouder om een statusoverzicht op te vragen.
 Ter illustratie onderstaand de interactie tussen Afnemer en
 Basisregistratie.
 
-Figuur 6. Interactiediagram status opvragen via de Digimelding
-Webservice
-
-![fig5.png](media/media/image6.png){width="4.7243055555555555in"
+![Interactiediagram status opvragen via de Digimelding Webservice](images/image6.png "Interactiediagram status opvragen via de Digimelding Webservice"){width="4.7243055555555555in"
 height="2.1569444444444446in"}
 
-Figuur 7. Interactiediagram status opvragen rechtstreeks
-
-![Figuur 6.png](media/media/image7.png){width="4.7243055555555555in"
+![Interactiediagram status opvragen rechtstreeks](images/image7.png "Interactiediagram status opvragen rechtstreeks"){width="4.7243055555555555in"
 height="2.442361111111111in"}
 
 Het statusoverzicht wordt opgevraagd op basis van de verplichte
@@ -696,15 +684,10 @@ en Bronhouder om details van een bepaalde terugmelding op te vragen.
 Ter illustratie onderstaand de interactie tussen Afnemer en
 Basisregistratie.
 
-Figuur 8. Interactiediagram details terugmelding bevragen via
-Digimelding Webservice
-
-![fig7.png](media/media/image8.png){width="4.7243055555555555in"
+![Interactiediagram details terugmelding bevragen via Digimelding Webservice](images/image8.png "Interactiediagram details terugmelding bevragen via Digimelding Webservice"){width="4.7243055555555555in"
 height="2.08125in"}
 
-Figuur 9. Interactiediagram detail terugmelding bevragen rechtstreeks
-
-![Figuur 8.png](media/media/image9.png){width="4.7243055555555555in"
+![Interactiediagram detail terugmelding bevragen rechtstreeks](images/image9.png "Interactiediagram detail terugmelding bevragen rechtstreeks"){width="4.7243055555555555in"
 height="2.332638888888889in"}
 
 Het doel van dit bericht is het opvragen van alle informatie over één
@@ -977,14 +960,10 @@ is.
   Bijzonderheden   
   ---------------- ------------------------------------------------------------------------------------------------------------
 
-Figuur 10: Interactiediagram voor echo's
-
-![Figuur 9.png](media/media/image10.png){width="4.119011373578303in"
+![ Interactiediagram voor echo's](images/image10.png " Interactiediagram voor echo's"){width="4.119011373578303in"
 height="2.515277777777778in"}
 
-Figuur 11: Interactiediagram echoverzoek via Digimelding Webservice
-
-![fig10.png](media/media/image11.png){width="4.7243055555555555in"
+![Interactiediagram echoverzoek via Digimelding Webservice](images/image11.png "Interactiediagram echoverzoek via Digimelding Webservice"){width="4.7243055555555555in"
 height="2.1979166666666665in"}
 
 ### EchoRequest
