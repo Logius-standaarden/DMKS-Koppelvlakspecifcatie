@@ -103,158 +103,51 @@ verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
 De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:
 
+| | |
+|---|---|
 | **AnnotatieBoom . Annotatie**                           | \[1..\*\] |
-+=========================================================+===========+
 |                                                         |           |
-+---------------------------------------------------------+-----------+
 | **Annotatie . Terugmelding**                            | \[1..1\]  |
-+---------------------------------------------------------+-----------+
 | Terugmelding . **Annotatiebasis**                       |           |
-+---------------------------------------------------------+-----------+
-| Terugmelding . Bronverwijzingen                         | \[1..1\]  |
+| Terugmelding . Bronverwijzingen<br>*Bronverwijzingen bestaande uit één of meerdere bronverwijzing*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.* | \[1..1\] |
+| Terugmelding . Bronverwijzingen . Bronverwijzing<br>*Bestaande uit een URI en een selectieverwijzing naar het basisregistratie-element waarop wordt teruggemeld. Dit zijn er meerdere, maar in de huidige praktijk is dit er altijd precies één.* | \[1..\*\] |
+| Terugmelding . Bronverwijzingen . Bronverwijzing .  Uri<br> *Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).* | \[1..1\] |
+| Terugmelding . Bronverwijzingen . Bronverwijzing . Selectie<br> *Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).* | \[0..\*\] |
+| Terugmelding . Attributenset<br> *De set van attributen die daadwerkelijk gewijzigd dienen te worden.* | \[1..1\] |
+| Attribuut<br>*Eén of meerdere attributen die gewijzigd dienen te worden.* | \[1..\*\] |
+| Attribuut . Uri<br>De unieke aanduiding van het attribuut | \[1..1\] |
+| Attribuut . BetwijfeldeWaarde<br>*De bestaande waarde in de basisregistratie.*  | \[0..1\] |
+| Attribuut . VoorgesteldeWaarde<br>*De voorgestelde nieuwe waarde.* | \[0..1\] |
+| Terugmelding . Peilmoment<br>*De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.* | \[0..1\] |
 |                                                         |           |
-| > *Bronverwijzingen bestaande uit één of meerdere       |           |
-| > bronverwijzing\                                       |           |
-| > Lijst van verwijzingen met basisregistratie elementen |           |
-| > waarop wordt teruggemeld.*                            |           |
-+---------------------------------------------------------+-----------+
-| > Terugmelding . Bronverwijzingen . Bronverwijzing      | \[1..\*\] |
-| >                                                       |           |
-| > *Bestaande uit een URI en een selectieverwijzing naar |           |
-| > het basisregistratie-element waarop wordt             |           |
-| > teruggemeld. Dit zijn er meerdere, maar in de huidige |           |
-| > praktijk is dit er altijd precies één.*               |           |
-+---------------------------------------------------------+-----------+
-| > Terugmelding . Bronverwijzingen . Bronverwijzing .    | \[1..1\]  |
-| > Uri                                                   |           |
-| >                                                       |           |
-| > *Een combinatie van OIN en de unieke sleutel van het  |           |
-| > brongegeven zodat een unieke referentie ontstaat naar |           |
-| > het brongegeven (bijv. OIN en HRN).*                  |           |
-+---------------------------------------------------------+-----------+
-| > Terugmelding . Bronverwijzingen . Bronverwijzing .    | \[0..\*\] |
-| > Selectie                                              |           |
-| >                                                       |           |
-| > *Selectie van een element binnen de structuur die     |           |
-| > door de URI uniek geïdentificeerd wordt (bijvoorbeeld |           |
-| > onderneming).*                                        |           |
-+---------------------------------------------------------+-----------+
-| Terugmelding . Attributenset                            | \[1..1\]  |
-|                                                         |           |
-| > *De set van attributen die daadwerkelijk gewijzigd    |           |
-| > dienen te worden.*                                    |           |
-+---------------------------------------------------------+-----------+
-| Attribuut                                               | \[1..\*\] |
-|                                                         |           |
-| > *Eén of meerdere attributen die gewijzigd dienen te   |           |
-| > worden.*                                              |           |
-+---------------------------------------------------------+-----------+
-| Attribuut . Uri                                         | \[1..1\]  |
-|                                                         |           |
-| > De unieke aanduiding van het attribuut                |           |
-+---------------------------------------------------------+-----------+
-| Attribuut . BetwijfeldeWaarde                           | \[0..1\]  |
-|                                                         |           |
-| > *De bestaande waarde in de basisregistratie.*         |           |
-+---------------------------------------------------------+-----------+
-| Attribuut . VoorgesteldeWaarde                          | \[0..1\]  |
-|                                                         |           |
-| > *De voorgestelde nieuwe waarde.*                      |           |
-+---------------------------------------------------------+-----------+
-| Terugmelding . Peilmoment                               | \[0..1\]  |
-|                                                         |           |
-| > *De datum waarop de betwijfelde waarde geldig is en   |           |
-| > de voorgestelde waarde geldig zou moeten zijn.*       |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Annotatiestatus**                         | \[1..\*\] |
-|                                                         |           |
-| *Status van de terugmelding*                            |           |
-+---------------------------------------------------------+-----------+
+| **Annotatie . Annotatiestatus**<br>*Status van de terugmelding* | \[1..\*\] |
 | Annotatiestatus . **Annotatiebasis**                    |           |
-+---------------------------------------------------------+-----------+
-| Annotatiestatus . Status                                | \[1..1\]  |
+| Annotatiestatus . Status<br> *Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)* | \[1..1\]  |
 |                                                         |           |
-| > *Zie bijlage B voor lijst met geadviseerde statussen  |           |
-| > voor aangesloten basisregistraties.(Het is toegestaan |           |
-| > om in de eigen catalogus afwijkende statussen op te   |           |
-| > nemen)*                                               |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Referentiekenmerk**                       | \[1..\*\] |
-|                                                         |           |
-| *Eigen kenmerk terugmeldende organisatie (het mogen er  |           |
-| meer zijn, in de huidige praktijk altijd precies één).* |           |
-+---------------------------------------------------------+-----------+
+| **Annotatie . Referentiekenmerk**<br>*Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).* | \[1..\*\] |
 | Referentiekenmerk . **Annotatiebasis**                  |           |
-+---------------------------------------------------------+-----------+
-| Referentiekenmerk . Kenmerk                             | \[1..1\]  |
+| Referentiekenmerk . Kenmerk<br>*Eigen kenmerk terugmeldende organisatie.*<br>*In de huidige praktijk maximaal 12 posities* | \[1..1\]  |
 |                                                         |           |
-| > *Eigen kenmerk terugmeldende organisatie.*            |           |
-| >                                                       |           |
-| > *In de huidige praktijk maximaal 12 posities*         |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Contactinformatie**                       | \[1..\*\] |
-|                                                         |           |
-| > *Contactgegevens*                                     |           |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . \@ContactType                       | \[1..1\]  |
-|                                                         |           |
-| > *kan alleen de waarden \'Melder\' of \'Behandelaar\'  |           |
-| > hebben*                                               |           |
-+---------------------------------------------------------+-----------+
+| **Annotatie . Contactinformatie**<br>*Contactgegevens*  | \[1..\*\] |
+| Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\] |
 | Contactinformatie . **Annotatiebasis**                  |           |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Naam                                | \[1..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Telefoon                            | \[0..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Email                               | \[1..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Afdeling                            | \[0..1\]  |
-+---------------------------------------------------------+-----------+
 |                                                         |           |
-+---------------------------------------------------------+-----------+
 | **Annotatie . Bijlageverwijzing**                       | \[0..\*\] |
 |                                                         |           |
 | > *HR ondersteunt maximaal 5 bijlagen.*                 |           |
-+---------------------------------------------------------+-----------+
 | Bijlageverwijzing . **Annotatiebasis**                  |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . Bestandsnaam                        | \[1..1\]  |
+| Bijlageverwijzing . Bestandsnaam<br>*De naam van het bestand.*  | \[1..1\]  |
+| Bijlageverwijzing . MIMEType<br>*Het MIME type van de bijlage.* | \[1..1\]  |
+| Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.* | \[1..1\]  |
+| Bijlageverwijzing . Beschrijving<br>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie.* | \[0..1\] |
 |                                                         |           |
-| > *De naam van het bestand.*                            |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . MIMEType                            | \[1..1\]  |
-|                                                         |           |
-| *Het MIME type van de bijlage.*                         |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . BijlageData                         | \[1..1\]  |
-|                                                         |           |
-| > *Het bestand zelf in Base64-binary encoding.*         |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . Beschrijving                        | \[0..1\]  |
-|                                                         |           |
-| > *Beschrijving van de bijlage. De bijlage zelf wordt   |           |
-| > nooit mee teruggeleverd bij het bevragen van een      |           |
-| > terugmelding/annotatie.*                              |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . BehandelendeBronhouder**                  | \[0 \*\]  |
-|                                                         |           |
-| *Behandelende bronhouder*                               |           |
-+---------------------------------------------------------+-----------+
+| **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder* | \[0 \*\]  |
 | BehandelendeBronhouder . **Annotatiebasis**             |           |
-+---------------------------------------------------------+-----------+
-| BehandelendeBronhouder . Bronhouder                     | \[1..1\]  |
-|                                                         |           |
-| *De gewenste bronhouder*                                |           |
-+---------------------------------------------------------+-----------+
+| BehandelendeBronhouder . Bronhouder<br>*De gewenste bronhouder*     | \[1..1\]  |
 
 #### Annotatie toevoegen (intrekken)
 
