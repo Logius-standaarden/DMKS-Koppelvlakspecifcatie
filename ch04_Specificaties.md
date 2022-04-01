@@ -86,34 +86,13 @@ De berichten beschreven in deze uitwisseling worden gebruikt om:
 
 ### Inhoud bericht Annotatie ToevoegenRequest
 
-+--------------------------------------------------------+------------+
+| | |
+|---|---|
 | **AnnotatieToevoegenRequest**                          |            |
-+========================================================+============+
-|                                                        |            |
-+--------------------------------------------------------+------------+
-| OinBasisregistratie                                    | \[1..1\]   |
-|                                                        |            |
-| *\                                                     |            |
-| *Het OIN van de houder van een landelijke voorziening  |            |
-| van de basisregistratie;                               |            |
-+--------------------------------------------------------+------------+
-| Registratie                                            | \[0..1\]   |
-|                                                        |            |
-| Code (maximaal 3 letterig) waarmee de basisregistratie |            |
-| wordt aangeduid wanneer de houder van een landelijke   |            |
-| voorziening meer dan 1 basisregistratie beheert (bv    |            |
-| BRT, BGT).                                             |            |
-+--------------------------------------------------------+------------+
-| Annotatie                                              | \[1..1\]\* |
-|                                                        |            |
-| > *Dit element wordt alleen gevuld met een annotatie   |            |
-| > die moet worden ingetrokken..*                       |            |
-+--------------------------------------------------------+------------+
-| AnnotatieBoom                                          | \[1..1\]\* |
-|                                                        |            |
-| > *Bestaat uit minimaal één annotatie (de              |            |
-| > terugmelding) en de bijbehorende leafs.*             |            |
-+--------------------------------------------------------+------------+
+| OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\]   |
+| Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke  voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\] |
+| Annotatie<br>*Dit element wordt alleen gevuld met een annotatie die moet worden ingetrokken.* | \[1..1\]\* |
+| AnnotatieBoom<br>*Bestaat uit minimaal één annotatie (de terugmelding) en de bijbehorende leafs.* | \[1..1\]\* |
 
 \* De elementen Annotatie en AnnotatieBoom zijn onderdeel van een
 verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
