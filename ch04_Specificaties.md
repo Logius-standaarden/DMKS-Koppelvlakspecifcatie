@@ -45,7 +45,6 @@ volgende secties met specifieke berichten samengevat tot één regel
 Annotatiebasis. Hieronder leggen we eenmalig uit welke elementen deze
 annotatiebasis bevat.
 
-+----------------------------------------------------------+----------+
 | **Annotatiebasis**                                       |          |
 +==========================================================+==========+
 | \@uuid                                                   | \[1..1\] |
@@ -212,7 +211,6 @@ verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
 De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:
 
-+---------------------------------------------------------+-----------+
 | **AnnotatieBoom . Annotatie**                           | \[1..\*\] |
 +=========================================================+===========+
 |                                                         |           |
