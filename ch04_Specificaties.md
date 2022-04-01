@@ -21,7 +21,7 @@ Per bericht wordt aangegeven (indien relevant):
     -   specificatie van de vulling van het veld,
 
     -   toelichting, bijvoorbeeld met de gebruikersactie of configuratie
-        > die nodig is om de juiste vulling te krijgen.
+        die nodig is om de juiste vulling te krijgen.
 
 Tevens wordt bij de berichten een interactiediagram getoond waarin
 duidelijk wordt welk systeem het bericht initieert.
@@ -166,11 +166,11 @@ De berichten beschreven in deze uitwisseling worden gebruikt om:
 
 ### Scenario's Communicatie
 
-![Interactiediagram terugmelden/intrekken direct](images/image3.png "Interactiediagram terugmelden/intrekken direct"){width="4.7243055555555555in" height="1.9756944444444444in"}
+![Interactiediagram terugmelden/intrekken direct](images/image3.png "Interactiediagram terugmelden/intrekken direct")
 
-![Interactiediagram terugmelden/intrekken via Digimelding Webservice](images/image4.png "Interactiediagram terugmelden/intrekken via Digimelding Webservice"){width="4.7243055555555555in" height="1.6215277777777777in"}
+![Interactiediagram terugmelden/intrekken via Digimelding Webservice](images/image4.png "Interactiediagram terugmelden/intrekken via Digimelding Webservice")
 
-![Interactiediagram status wijzigen](images/image5.png "Interactiediagram status wijzigen"){width="3.167361111111111in" height="1.910890201224847in"}
+![Interactiediagram status wijzigen](images/image5.png "Interactiediagram status wijzigen")
 
 ### Inhoud bericht Annotatie ToevoegenRequest
 
@@ -516,9 +516,9 @@ en Bronhouder om een statusoverzicht op te vragen.
 Ter illustratie onderstaand de interactie tussen Afnemer en
 Basisregistratie.
 
-![Interactiediagram status opvragen via de Digimelding Webservice](images/image6.png "Interactiediagram status opvragen via de Digimelding Webservice"){width="4.7243055555555555in" height="2.1569444444444446in"}
+![Interactiediagram status opvragen via de Digimelding Webservice](images/image6.png "Interactiediagram status opvragen via de Digimelding Webservice")
 
-![Interactiediagram status opvragen rechtstreeks](images/image7.png "Interactiediagram status opvragen rechtstreeks"){width="4.7243055555555555in" height="2.442361111111111in"}
+![Interactiediagram status opvragen rechtstreeks](images/image7.png "Interactiediagram status opvragen rechtstreeks")
 
 Het statusoverzicht wordt opgevraagd op basis van de verplichte
 elementen OIN en basisregistratie. Het OIN is verplicht omdat alle
@@ -679,9 +679,9 @@ en Bronhouder om details van een bepaalde terugmelding op te vragen.
 Ter illustratie onderstaand de interactie tussen Afnemer en
 Basisregistratie.
 
-![Interactiediagram details terugmelding bevragen via Digimelding Webservice](images/image8.png "Interactiediagram details terugmelding bevragen via Digimelding Webservice"){width="4.7243055555555555in" height="2.08125in"}
+![Interactiediagram details terugmelding bevragen via Digimelding Webservice](images/image8.png "Interactiediagram details terugmelding bevragen via Digimelding Webservice")
 
-![Interactiediagram detail terugmelding bevragen rechtstreeks](images/image9.png "Interactiediagram detail terugmelding bevragen rechtstreeks"){width="4.7243055555555555in" height="2.332638888888889in"}
+![Interactiediagram detail terugmelding bevragen rechtstreeks](images/image9.png "Interactiediagram detail terugmelding bevragen rechtstreeks")
 
 Het doel van dit bericht is het opvragen van alle informatie over één
 terugmelding bij een basisregistratie. Hiervoor wordt het OIN van de
@@ -953,9 +953,9 @@ is.
   Bijzonderheden   
   ---------------- ------------------------------------------------------------------------------------------------------------
 
-![ Interactiediagram voor echo's](images/image10.png " Interactiediagram voor echo's"){width="4.119011373578303in" height="2.515277777777778in"}
+![ Interactiediagram voor echo's](images/image10.png " Interactiediagram voor echo's")
 
-![Interactiediagram echoverzoek via Digimelding Webservice](images/image11.png "Interactiediagram echoverzoek via Digimelding Webservice"){width="4.7243055555555555in" height="2.1979166666666665in"}
+![Interactiediagram echoverzoek via Digimelding Webservice](images/image11.png "Interactiediagram echoverzoek via Digimelding Webservice")
 
 ### EchoRequest
 

@@ -22,18 +22,15 @@ authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
 specificatie.
 
-![Authenticatie en autorisatie bij Digimelding](images/image2.png){width="4.715277777777778in"
-height="1.0243055555555556in"}
+![Authenticatie en autorisatie bij Digimelding](images/image2.png "Authenticatie en autorisatie bij Digimelding")
 
-+----------------+----------------+----------------+----------------+
-| *              |                |                |                |
-| *Autorisatie** |                |                |                |
-+================+================+================+================+
-| *              | **Terugmeld\   | **             | **TMV\         |
-| *Terugmelder** | Applicatie**   | Digikoppeling\ | Basi           |
-|                |                | Adapter**      | sregistratie** |
-+----------------+----------------+----------------+----------------+
-| \*             | \* OIN in DMKS | \* OIN in      | \* Transport   |
+
+|                 |                |                |                |
+| **Autorisatie** |                |                |                |
+|     :---        |    :---        |    :---        |    :---        |
+| **Terugmelder** | **Terugmeld Applicatie**   | ** Digikoppeling Adapter** | **TMV Basisregistratie**           |
+|     :---        |    :---        |    :---        |    :---        |
+| \*             | \* OIN in DMKS | \* OIN in Digikoppeling     | \* Transport   |
 | E-herkenning\  | bericht        | Digikoppeling  | via            |
 | in DMKS        |                |                |                |
 | bericht        | \* (PKIO       | Headers        | Digikoppeling  |
@@ -63,7 +60,6 @@ height="1.0243055555555556in"}
 |                |                |                |                |
 |                |                |                | via SSOn Rijk  |
 |                |                |                | attributen     |
-+----------------+----------------+----------------+----------------+
 
 Figuur 2. Authenticatie en autorisatie bij Digimelding
 

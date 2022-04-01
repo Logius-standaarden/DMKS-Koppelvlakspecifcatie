@@ -54,13 +54,14 @@ var respecConfig = {
 
   // An array of person objects describing the editors of the document
   // this can be simple or more elaborated
-  editors: [{
-    name: "Peter Haasnoot",
+  editors: [
+  {
+    name: "Edwin Wisse",
     url: "https://logius.nl/standaarden",
     company: "Logius",
   },
   {
-    name: "Edwin Wisse",
+    name: "Peter Haasnoot",
     url: "https://logius.nl/standaarden",
     company: "Logius",
   }
