@@ -96,8 +96,6 @@ annotatiebasis bevat.
 | > van de relevantie opgenomen.*                          |          |
 +----------------------------------------------------------+----------+
 
- {#section .list-paragraph}
-
 ## Annotatie versturen
 
 De berichten beschreven in deze uitwisseling worden gebruikt om:
