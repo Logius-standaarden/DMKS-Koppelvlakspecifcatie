@@ -46,55 +46,15 @@ Annotatiebasis. Hieronder leggen we eenmalig uit welke elementen deze
 annotatiebasis bevat.
 
 | **Annotatiebasis**                                       |          |
-+==========================================================+==========+
-| \@uuid                                                   | \[1..1\] |
-|                                                          |          |
-| > *Unieke identificatie van de annotatie.*               |          |
-+----------------------------------------------------------+----------+
-| GeannoteerdDoor                                          | \[1..1\] |
-|                                                          |          |
-| > *Gegevens van diegene die de annotatie heeft           |          |
-| > toegevoegd.*                                           |          |
-+----------------------------------------------------------+----------+
-| GeannoteerdDoor . Oin                                    | \[1..1\] |
-|                                                          |          |
-| > *OIN van de terugmeldende organisatie.*                |          |
-+----------------------------------------------------------+----------+
-| GeannoteerdDoor . Vestiging                              | \[0..1\] |
-|                                                          |          |
-| > *Vestigingsnummer van desbetreffende organisatie uit   |          |
-| > eHerkenning/SSOn Rijk (indien door de afnemer          |          |
-| > toegepast voor authenticatie).*                        |          |
-+----------------------------------------------------------+----------+
-| GeannoteerdDoor . Persoonsaanduiding                     | \[1..1\] |
-|                                                          |          |
-| > *Deze zal met webservices bijna altijd de waarde       |          |
-| > "anoniem" hebben. Er zijn twee uitzonderingen. De      |          |
-| > eerste is wanneer nadere afspraken gemaakt zijn met    |          |
-| > een basisregistratie over de invulling van dit veld.   |          |
-| > De tweede is dat, indien binnen de organisatie         |          |
-| > eHerkenning/SSOn Rijk gebruikt is voor autorisatie en  |          |
-| > authenticatie, persoonsaanduiding uit eHerkenning/SSOn |          |
-| > Rijk dient te worden meegegeven.*                      |          |
-+----------------------------------------------------------+----------+
-| GeannoteerdOp                                            | \[1..1\] |
-|                                                          |          |
-| > *Tijdstempel waarop de annotatie heeft                 |          |
-| > plaatsgevonden*.                                       |          |
-+----------------------------------------------------------+----------+
-| Toelichting                                              | \[0..1\] |
-|                                                          |          |
-| > *Een toelichting bij de annotatie. In de huidige       |          |
-| > praktijk in gebruik voor root annotaties en status     |          |
-| > leaf annotaties voor overige leaf annotaties in de     |          |
-| > huidige praktijk altijd leeg.*                         |          |
-+----------------------------------------------------------+----------+
-| Annotatieverwijzing                                      | \[0..1\] |
-|                                                          |          |
-| > *Verwijzing naar de root annotatie waar een leaf       |          |
-| > annotatie aan gerelateerd is. Dit wordt afhankelijk    |          |
-| > van de relevantie opgenomen.*                          |          |
-+----------------------------------------------------------+----------+
+| :---                                                     | :---     |
+| \@uuid<br>*Unieke identificatie van de annotatie.*       | \[1..1\] |
+| GeannoteerdDoor<br>*Gegevens van diegene die de annotatie heeft toegevoegd.* | \[1..1\] |
+| GeannoteerdDoor . Oin<br>*OIN van de terugmeldende organisatie.*             | \[1..1\] |
+| GeannoteerdDoor . Vestiging<br>*Vestigingsnummer van desbetreffende organisatie uit eHerkenning/SSOn Rijk (indien door de afnemer toegepast voor authenticatie).* | \[0..1\] |
+| GeannoteerdDoor . Persoonsaanduiding<br>*Deze zal met webservices bijna altijd de waarde "anoniem" hebben. Er zijn twee uitzonderingen. De eerste is wanneer nadere afspraken gemaakt zijn met een basisregistratie over de invulling van dit veld. De tweede is dat, indien binnen de organisatie eHerkenning/SSOn Rijk gebruikt is voor autorisatie en authenticatie, persoonsaanduiding uit eHerkenning/SSOn Rijk dient te worden meegegeven.*         | \[1..1\] |
+| GeannoteerdOp<br>*Tijdstempel waarop de annotatie heeft plaatsgevonden*.     | \[1..1\] |
+| Toelichting<br>*Een toelichting bij de annotatie. In de huidige praktijk in gebruik voor root annotaties en status leaf annotaties voor overige leaf annotaties in de huidige praktijk altijd leeg.*                         | \[0..1\] |
+| Annotatieverwijzing<br>*Verwijzing naar de root annotatie waar een leaf annotatie aan gerelateerd is. Dit wordt afhankelijk  van de relevantie opgenomen.*                          | \[0..1\] |
 
 ## Annotatie versturen
 
@@ -102,9 +62,7 @@ De berichten beschreven in deze uitwisseling worden gebruikt om:
 
 -   met de terugmeldapplicatie van een afnemer een terugmelding te
     versturen
-
 -   om een eerder door de afnemer gedane terugmelding in te trekken
-
 -   om een status terug te melden van een bronhouder naar een Landelijke
     Voorziening
 
