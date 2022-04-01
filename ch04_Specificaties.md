@@ -104,9 +104,9 @@ De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:
 
 | | |
-|---|---|
+|---------------------------------------------------------|-----------|
 | **AnnotatieBoom . Annotatie**                           | \[1..\*\] |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | **Annotatie . Terugmelding**                            | \[1..1\]  |
 | Terugmelding . **Annotatiebasis**                       |           |
 | Terugmelding . Bronverwijzingen<br>*Bronverwijzingen bestaande uit één of meerdere bronverwijzing*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.* | \[1..1\] |
@@ -119,15 +119,15 @@ als volgt:
 | Attribuut . BetwijfeldeWaarde<br>*De bestaande waarde in de basisregistratie.*  | \[0..1\] |
 | Attribuut . VoorgesteldeWaarde<br>*De voorgestelde nieuwe waarde.* | \[0..1\] |
 | Terugmelding . Peilmoment<br>*De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.* | \[0..1\] |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | **Annotatie . Annotatiestatus**<br>*Status van de terugmelding* | \[1..\*\] |
 | Annotatiestatus . **Annotatiebasis**                    |           |
 | Annotatiestatus . Status<br> *Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)* | \[1..1\]  |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | **Annotatie . Referentiekenmerk**<br>*Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).* | \[1..\*\] |
 | Referentiekenmerk . **Annotatiebasis**                  |           |
 | Referentiekenmerk . Kenmerk<br>*Eigen kenmerk terugmeldende organisatie.*<br>*In de huidige praktijk maximaal 12 posities* | \[1..1\]  |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | **Annotatie . Contactinformatie**<br>*Contactgegevens*  | \[1..\*\] |
 | Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\] |
 | Contactinformatie . **Annotatiebasis**                  |           |
@@ -135,16 +135,16 @@ als volgt:
 | Contactinformatie . Telefoon                            | \[0..1\]  |
 | Contactinformatie . Email                               | \[1..1\]  |
 | Contactinformatie . Afdeling                            | \[0..1\]  |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | **Annotatie . Bijlageverwijzing**                       | \[0..\*\] |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | > *HR ondersteunt maximaal 5 bijlagen.*                 |           |
 | Bijlageverwijzing . **Annotatiebasis**                  |           |
 | Bijlageverwijzing . Bestandsnaam<br>*De naam van het bestand.*  | \[1..1\]  |
 | Bijlageverwijzing . MIMEType<br>*Het MIME type van de bijlage.* | \[1..1\]  |
 | Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.* | \[1..1\]  |
 | Bijlageverwijzing . Beschrijving<br>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie.* | \[0..1\] |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder* | \[0 \*\]  |
 | BehandelendeBronhouder . **Annotatiebasis**             |           |
 | BehandelendeBronhouder . Bronhouder<br>*De gewenste bronhouder*     | \[1..1\]  |
@@ -153,93 +153,39 @@ als volgt:
 
 De volgende structuur is in de XML-structuur child van de 'Annotatie'.
 
-+---------------------------------------------------------+-----------+
-| **Annotatiestatus**                                     | \[1..\*\] |
-|                                                         |           |
-| > *Status van de terugmelding.*                         |           |
-+=========================================================+===========+
-| **Annotatiestatus . Annotatiebasis**                    |           |
-|                                                         |           |
-| Inclusief toelichting en annotatieverwijzing            |           |
-+---------------------------------------------------------+-----------+
-| Annotatiestatus . Status                                | \[0..1\]  |
-|                                                         |           |
-| Een afnemer kan bij het doen van een intrekking alleen  |           |
-| de status: INGETROKKEN gebruiken in de huidige          |           |
-| praktijk.                                               |           |
-+---------------------------------------------------------+-----------+
 
-**Annotatie toevoegen (statuswijziging)\
-**De volgende structuur is in de XML-structuur child van de 'Annotatie'.
+| | |
+|---------------------------------------------------------|-----------|
+| **Annotatiestatus**<br>*Status van de terugmelding.*    | \[1..\*\] |
+| **Annotatiestatus . Annotatiebasis**<br>Inclusief toelichting en annotatieverwijzing  |           |
+| Annotatiestatus . Status<br>Een afnemer kan bij het doen van een intrekking alleen de status: INGETROKKEN gebruiken in de huidige praktijk. | \[0..1\]  |
 
-+---------------------------------------------------------+-----------+
-| **Annotatiestatus**                                     | \[1..\*\] |
-|                                                         |           |
-| > *Status van de terugmelding.*                         |           |
-+=========================================================+===========+
-| **Annotatiestatus . Annotatiebasis**                    |           |
-|                                                         |           |
-| Inclusief toelichting en annotatieverwijzing            |           |
-+---------------------------------------------------------+-----------+
-| Annotatiestatus . Status                                | \[0..1\]  |
-|                                                         |           |
-| *Zie bijlage B voor lijst met geadviseerde statussen    |           |
-| voor aangesloten basisregistraties.(Het is toegestaan   |           |
-| om in de eigen catalogus afwijkende statussen op te     |           |
-| nemen)*                                                 |           |
-+---------------------------------------------------------+-----------+
+**Annotatie toevoegen (statuswijziging)**
+De volgende structuur is in de XML-structuur child van de 'Annotatie'.
+
+| | |
+|---------------------------------------------------------|-----------|
+| **Annotatiestatus**<br>*Status van de terugmelding.*    | \[1..\*\] |
+| **Annotatiestatus . Annotatiebasis**<br>Inclusief toelichting en annotatieverwijzing   |           |
+| Annotatiestatus . Status<br>*Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)* | \[0..1\]  |
 | Annotatiestatus . Statustype                            | \[0..1\]  |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Contactinformatie**                       | \[0..\*\] |
-|                                                         |           |
-| > *Contactgegevens.*                                    |           |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . \@ContactType                       | \[1..1\]  |
-|                                                         |           |
-| *kan alleen de waarden \'Melder\' of \'Behandelaar\'    |           |
-| hebben*                                                 |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
+| **Annotatie . Contactinformatie**<br>*Contactgegevens.* | \[0..\*\] |
+| Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\]  |
 | **Contactinformatie . Annotatiebasis**                  |           |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Naam                                | \[1..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Telefoon                            | \[0..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Email                               | \[1..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Afdeling                            | \[0..1\]  |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Planningsverwachting**                    | \[0..\*\] |
-|                                                         |           |
-| > *Verwachte termijn voor behandeling*                  |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
+| **Annotatie . Planningsverwachting**<br>*Verwachte termijn voor behandeling* | \[0..\*\] |
 | Planningsverwachting . **Annotatiebasis**               |           |
-+---------------------------------------------------------+-----------+
-| Planningsverwachting . MijlpaalAanduiding               | \[0..1\]  |
-|                                                         |           |
-| > *Beschrijving van de planningsverwachting.*           |           |
-+---------------------------------------------------------+-----------+
-| Planningsverwachting . MijlpaalTijdstempel              | \[0..1\]  |
-|                                                         |           |
-| > *Datum waarop de planning gereed is.*                 |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . BehandelendeBronhouder**                  | \[0 \*\]  |
-|                                                         |           |
-| > *Behandelende bronhouder*                             |           |
-+---------------------------------------------------------+-----------+
+| Planningsverwachting . MijlpaalAanduiding<br>*Beschrijving van de planningsverwachting.* | \[0..1\] |
+| Planningsverwachting . MijlpaalTijdstempel<br>*Datum waarop de planning gereed is.*      | \[0..1\] |
+|---------------------------------------------------------|-----------|
+| **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder* | \[0 \*\] |
 | BehandelendeBronhouder . **Annotatiebasis**             |           |
-+---------------------------------------------------------+-----------+
-| BehandelendeBronhouder . Bronhouder                     | \[1..1\]  |
-|                                                         |           |
-| > *De gewenste bronhouder (bij status "Verkeerde        |           |
-| > Bronhouder")*                                         |           |
-+---------------------------------------------------------+-----------+
+| BehandelendeBronhouder . Bronhouder<br>*De gewenste bronhouder (bij status "Verkeerde Bronhouder")* | \[1..1\] |
 
 Optioneel kan bij een statuswijziging worden meegezonden:
 
@@ -256,22 +202,14 @@ een tijdstempel. Het is een zogeheten functionele acknowledgement wat
 betekent dat de achterliggende (TMV-)applicatie het vraagbericht in
 goede orde ontvangen heeft.
 
-+----------------------------------------------------------+----------+
+| | |
+|----------------------------------------------------------|----------|
+|----------------------------------------------------------|----------|
 | **Berichttype:** AnnotatieToevoegenResponse              |          |
-+==========================================================+==========+
 | **Elementen/attributen**                                 |          |
-+----------------------------------------------------------+----------+
 | AnnotatieToevoegenResponse                               |          |
-+----------------------------------------------------------+----------+
-| AnnotatieToevoegenResponse . Tijdstempel                 | \[1..1\] |
-|                                                          |          |
-| > *Tijd waarop antwoord verstuurd is.*                   |          |
-+----------------------------------------------------------+----------+
-| AnnotatieToevoegenResponse . AnnotatieVerwijzing         | \[1..1\] |
-|                                                          |          |
-| > *UUID van de toegevoegde annotatie waar het antwoord   |          |
-| > betrekking op heeft.*                                  |          |
-+----------------------------------------------------------+----------+
+| AnnotatieToevoegenResponse . Tijdstempel<br>*Tijd waarop antwoord verstuurd is.* | \[1..1\] |
+| AnnotatieToevoegenResponse . AnnotatieVerwijzing<br>*UUID van de toegevoegde annotatie waar het antwoord betrekking op heeft.* | \[1..1\] |
 
 ## Status bevragen
 
@@ -281,14 +219,14 @@ huidige status van deze terugmeldingen.
 
 ### Algemeen
 
-  ---------------- ------------------------------------------------------------------------------------------------------------------------------
-  Doel             Het opvragen van de status van terugmeldingen van een terugmeldende organisatie.
-  Voorwaarde       De organisatie heeft terugmeldingen gedaan.
-  Trigger          Een gebruiker wil de status van terugmeldingen van zijn organisatie weten.
-  Direct gevolg    De gebruiker is geïnformeerd over de status en eventueel extra detailinformatie van de terugmeldingen die hem interesseren.
-  Vervolgactie     De gebruiker kan terugmeldingen van zijn organisatie intrekken op basis van de informatie verstrekt in het status overzicht.
-  Bijzonderheden   \-
-  ---------------- ------------------------------------------------------------------------------------------------------------------------------
+  |      |      |
+  | :--- | :--- |
+  | Doel           |  Het opvragen van de status van terugmeldingen van een terugmeldende organisatie. |
+  | Voorwaarde     |  De organisatie heeft terugmeldingen gedaan.                                |
+  | Trigger        |  Een gebruiker wil de status van terugmeldingen van zijn organisatie weten. |
+  | Direct gevolg  |  De gebruiker is geïnformeerd over de status en eventueel extra detailinformatie van de terugmeldingen die hem interesseren.     |
+  | Vervolgactie   |  De gebruiker kan terugmeldingen van zijn organisatie intrekken op basis van de informatie verstrekt in het status overzicht. |
+  | Bijzonderheden  | \- |
 
 ### StatusoverzichtRequest
 
