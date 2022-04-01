@@ -22,7 +22,7 @@ authenticatie en autorisatie voor het verkrijgen van toegang door de
 terugmelder tot de terugmeldapplicatie. Dit is buiten scope van deze
 specificatie.
 
-![Authenticatie en autorisatie bij Digimelding](media/image2.png){width="4.715277777777778in"
+![Authenticatie en autorisatie bij Digimelding](images/image2.png){width="4.715277777777778in"
 height="1.0243055555555556in"}
 
 +----------------+----------------+----------------+----------------+
