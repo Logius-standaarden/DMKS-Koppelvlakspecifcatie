@@ -24,42 +24,14 @@ specificatie.
 
 ![Authenticatie en autorisatie bij Digimelding](images/image2.png "Authenticatie en autorisatie bij Digimelding")
 
-
-|                 |                |                |                |
 | **Autorisatie** |                |                |                |
 |     :---        |    :---        |    :---        |    :---        |
-| **Terugmelder** | **Terugmeld Applicatie**   | ** Digikoppeling Adapter** | **TMV Basisregistratie**           |
+| **Terugmelder** | **Terugmeld Applicatie**   | **Digikoppeling Adapter** | **TMV Basisregistratie** |
 |     :---        |    :---        |    :---        |    :---        |
-| \*             | \* OIN in DMKS | \* OIN in Digikoppeling     | \* Transport   |
-| E-herkenning\  | bericht        | Digikoppeling  | via            |
-| in DMKS        |                |                |                |
-| bericht        | \* (PKIO       | Headers        | Digikoppeling  |
-|                | certificaat    | WS-Adressing   |                |
-| \_ OIN         |                |                | \* Applicatie: |
-|                | met OIN voor   | \* PKIO        |                |
-| \_             | signing)       | certificaat    | via OIN in     |
-| Vestigingsnr   |                |                | DMKS bericht   |
-|                | \* OIN in      | met OIN voor   |                |
-| \_             | Digikoppeling  | TLS/signing    | of             |
-| Pers           |                |                |                |
-| oonsaanduiding | Header         |                | via            |
-|                | WS-security    |                | E-Herkenning : |
-| \* SSOn Rijk   |                |                | OIN,           |
-|                |                |                |                |
-| \_ OIN         |                |                | ve             |
-|                |                |                | stigingsnummer |
-| \_             |                |                | en             |
-| Vestigingsnr   |                |                |                |
-|                |                |                | pers           |
-| \_             |                |                | oonsaanduiding |
-| Pers           |                |                | in             |
-| oonsaanduiding |                |                |                |
-|                |                |                | DMKS bericht   |
-| \* Vrije keuze |                |                |                |
-|                |                |                | of             |
-|                |                |                |                |
-|                |                |                | via SSOn Rijk  |
-|                |                |                | attributen     |
+| E-herkenning in DMKS bericht<br>OIN<br>Vestigingsnr<br>Persoonsaanduiding | OIN in DMKS bericht | OIN in Digikoppeling Headers WS-Adressing | Transport via Digikoppeling |
+| SSOn Rijk<br>OIN<br>Vestigingsnr<br>Persoonsaanduiding | (PKIO certificaat met OIN voor signing) |  PKIO certificaat
+met OIN voor TLS/signing | Applicatie: via OIN in DMKS bericht of via E-Herkenning : OIN, vestigingsnummer en persoonsaanduiding in DMKS bericht of via SSOn Rijk attributen |
+| Vrije keuze | OIN in Digikoppeling Header WS-security | | |
 
 Figuur 2. Authenticatie en autorisatie bij Digimelding
 
