@@ -1,14 +1,13 @@
 
 # Foutberichten
 
-  ---------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Doel             Aangeven dat er een fout is opgetreden.
-  Voorwaarde       Een foutbericht is altijd een reactie op een reeds verzonden bericht, dus één van de vraagberichten uit de voorgaande secties (AnnotatieToevoegenRequest, StatusoverzichtRequest, DetailsTerugmeldingRequest).
-  Trigger          Het verzonden vraagbericht leidt tot een fout in de verwerking ervan.
-  Direct gevolg    Een foutbericht wordt verstuurd.
-  Vervolgactie     De ontvanger van het foutbericht dient de fout af te handelen.
-  Bijzonderheden   
-  ---------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|-------------------|---------------------------------------------------------|
+|  Doel             | Aangeven dat er een fout is opgetreden.                 |
+|  Voorwaarde       | Een foutbericht is altijd een reactie op een reeds verzonden bericht, dus één van de vraagberichten uit de voorgaande secties (AnnotatieToevoegenRequest, StatusoverzichtRequest, DetailsTerugmeldingRequest). |
+|  Trigger          | Het verzonden vraagbericht leidt tot een fout in de verwerking ervan. |
+|  Direct gevolg    | Een foutbericht wordt verstuurd. |
+|  Vervolgactie     | De ontvanger van het foutbericht dient de fout af te handelen. |
+|  Bijzonderheden   |                                  |
 
 Een aantal foutsituaties is voorstelbaar. Er kan een probleem zijn met
 autorisatie, met de syntax van de gegevens of er kan een fout optreden
