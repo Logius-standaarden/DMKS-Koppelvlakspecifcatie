@@ -256,7 +256,6 @@ terugmeldingen. Dit is enigszins bewerkelijk aangezien iedere
 basisregistratie zijn eigen statussen mag definiëren. In de
 berichtenschema's is daarom slechts vastgelegd dat dit een string is.
 
-
 | **Berichttype**: StatusoverzichtRequest                 |           |
 |---------------------------------------------------------|-----------|
 | **Elementen/attributen**                                |           |
@@ -296,23 +295,14 @@ ondernomen.
 | **Berichttype**: StatusoverzichtResponse                |           |
 |---------------------------------------------------------|-----------|
 | **Elementen/attributen**                                |           |
-|---------------------------------------------------------|-----------|
 | **AnnotatieLijst**                                      | \[1..\*\] |
-|---------------------------------------------------------|-----------|
 | Annotatie                                               | \[0..\*\] |
-|---------------------------------------------------------|-----------|
 | Annotatie . Tijdstempel<br>*Datum/tijd waarop de annotatie heeft plaatsgevonden* | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 | Annotatie . Uuid<br>*Unieke verwijzing naar de root annotatie van een annotatieboom.* | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 | Annotatie . Meldingskenmerk<br>*Eigen kenmerk terugmeldende organisatie.* | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 | Annotatie . Bronverwijzing                              | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 | Annotatie . Bronverwijzing . Uri<br>*Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).* | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 | Annotatie . Bronverwijzing . Selectie<br>*Object waarop is teruggemeld.* | \[0..1\]  |
-|---------------------------------------------------------|-----------|
 | Annotatie . Annotatiestatus<br>*Laatste status annotatie van de terugmelding.* | \[1..1\]  |
 
 ### DetailsTerugmeldingRequest
