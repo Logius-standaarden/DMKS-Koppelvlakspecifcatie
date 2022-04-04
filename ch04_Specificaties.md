@@ -103,10 +103,8 @@ verplicht keuzeveld: de AnnotatieToevoegenRequest bevat altijd slechts
 De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:
 
-| | |
-|---------------------------------------------------------|-----------|
 | **AnnotatieBoom . Annotatie**                           | \[1..\*\] |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . Terugmelding**                            | \[1..1\]  |
 | Terugmelding . **Annotatiebasis**                       |           |
 | Terugmelding . Bronverwijzingen<br>*Bronverwijzingen bestaande uit één of meerdere bronverwijzing*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.* | \[1..1\] |
@@ -119,15 +117,15 @@ als volgt:
 | Attribuut . BetwijfeldeWaarde<br>*De bestaande waarde in de basisregistratie.*  | \[0..1\] |
 | Attribuut . VoorgesteldeWaarde<br>*De voorgestelde nieuwe waarde.* | \[0..1\] |
 | Terugmelding . Peilmoment<br>*De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.* | \[0..1\] |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . Annotatiestatus**<br>*Status van de terugmelding* | \[1..\*\] |
 | Annotatiestatus . **Annotatiebasis**                    |           |
 | Annotatiestatus . Status<br> *Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)* | \[1..1\]  |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . Referentiekenmerk**<br>*Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).* | \[1..\*\] |
 | Referentiekenmerk . **Annotatiebasis**                  |           |
 | Referentiekenmerk . Kenmerk<br>*Eigen kenmerk terugmeldende organisatie.*<br>*In de huidige praktijk maximaal 12 posities* | \[1..1\]  |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . Contactinformatie**<br>*Contactgegevens*  | \[1..\*\] |
 | Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\] |
 | Contactinformatie . **Annotatiebasis**                  |           |
@@ -135,16 +133,16 @@ als volgt:
 | Contactinformatie . Telefoon                            | \[0..1\]  |
 | Contactinformatie . Email                               | \[1..1\]  |
 | Contactinformatie . Afdeling                            | \[0..1\]  |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . Bijlageverwijzing**                       | \[0..\*\] |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | > *HR ondersteunt maximaal 5 bijlagen.*                 |           |
 | Bijlageverwijzing . **Annotatiebasis**                  |           |
 | Bijlageverwijzing . Bestandsnaam<br>*De naam van het bestand.*  | \[1..1\]  |
 | Bijlageverwijzing . MIMEType<br>*Het MIME type van de bijlage.* | \[1..1\]  |
 | Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.* | \[1..1\]  |
 | Bijlageverwijzing . Beschrijving<br>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie.* | \[0..1\] |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder* | \[0 \*\]  |
 | BehandelendeBronhouder . **Annotatiebasis**             |           |
 | BehandelendeBronhouder . Bronhouder<br>*De gewenste bronhouder*     | \[1..1\]  |

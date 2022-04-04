@@ -41,13 +41,7 @@ afgebeeld.
   Eindstatus                                                                                                                                          
   overgang mogelijk        X                                                                                                                          
 
-[^1]: De eHerkenningmiddelenleverancier stuurt een SAML token terug met
-    daarin o.a. het 'OIN' zoals in de eHerkenningskoppelvlakstandaard is
-    gespecificeerd. Dit 'OIN' met een prefix 00000003 is niet gelijk aan
-    het door Logius uitgegeven OIN zoals in het OIN-register is
-    opgenomen.
 
-[^2]: Best Effort, beveiligd met tweezijdige TLS
 
 [^3]: Best Effort, beveiligd met tweezijdige TLS en gesigneerde
     berichten
