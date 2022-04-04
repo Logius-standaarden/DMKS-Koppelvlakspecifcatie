@@ -104,7 +104,7 @@ De structuur van de instanties van 'Annotatie' in de 'AnnotatieBoom' is
 als volgt:
 
 | **AnnotatieBoom . Annotatie**                           | \[1..\*\] |
-|                                                         |           |
+|---------------------------------------------------------|-----------|
 | **Annotatie . Terugmelding**                            | \[1..1\]  |
 | Terugmelding . **Annotatiebasis**                       |           |
 | Terugmelding . Bronverwijzingen<br>*Bronverwijzingen bestaande uit één of meerdere bronverwijzing*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.* | \[1..1\] |
