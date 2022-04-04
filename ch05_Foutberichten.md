@@ -184,12 +184,9 @@ Voor fouten op protocolniveau dienen de fouten van Digikoppeling gevolgd
 te worden. Voor generieke fouten in Digimelding zijn de volgende
 Digikoppeling-foutcodes van toepassing:
 
-  **Nr**   **Omschrijving**                            **Toelichting**
-  -------- ------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  DK0002   Requester systeem niet geautoriseerd        Indien je voor een basisregistratie niet geautoriseerd bent, ontvang je geen inhoudelijke informatie van die basisregistratie. Het autorisatiemodel wordt door de basisregistratie bepaald. In de foutmelding wordt de betreffende basisregistratie, waarvoor geen autorisatie bestaat, teruggegeven.
-  DK0004   Element niet conform XSD                    Bij een validatiefout wordt meegegeven in het SOAP Faultdetail aan welke XSD niet voldaan wordt.
-  DK0050   Proces voor afhandelen bericht geeft fout   Wanneer een bericht zich niet houdt aan afspraken die gemaakt zijn rondom de vulling van de payload welke basisregistratiespecifiek zijn, bijvoorbeeld: Status is volgens de XSD een vrij tekstveld, iedere basisregistratie is vrij deze te kiezen. De basisregistratie kan teruggeven dat een status bij hen niet bekend is.
-  DK0051   Antwoordend systeem geeft time-out          Indien de achterliggende applicatie niet draait of een fout produceert dan kan het geen antwoord geven terwijl een geldig antwoord wel mogelijk zou moeten zijn en de messaging stack(Digikoppeling) nog wel in de lucht is.
-
-**\
-**
+| **Nr** |  **Omschrijving**                           |   **Toelichting**       |
+|--------|---------------------------------------------|-------------------------|
+|  DK0002 |  Requester systeem niet geautoriseerd      | Indien je voor een basisregistratie niet geautoriseerd bent, ontvang je geen inhoudelijke informatie van die basisregistratie. Het autorisatiemodel wordt door de basisregistratie bepaald. In de foutmelding wordt de betreffende basisregistratie, waarvoor geen autorisatie bestaat, teruggegeven. |
+|  DK0004 |  Element niet conform XSD                  | Bij een validatiefout wordt meegegeven in het SOAP Faultdetail aan welke XSD niet voldaan wordt. |
+|  DK0050 |  Proces voor afhandelen bericht geeft fout | Wanneer een bericht zich niet houdt aan afspraken die gemaakt zijn rondom de vulling van de payload welke basisregistratiespecifiek zijn, bijvoorbeeld: Status is volgens de XSD een vrij tekstveld, iedere basisregistratie is vrij deze te kiezen. De basisregistratie kan teruggeven dat een status bij hen niet bekend is. |
+|  DK0051 |  Antwoordend systeem geeft time-out        | Indien de achterliggende applicatie niet draait of een fout produceert dan kan het geen antwoord geven terwijl een geldig antwoord wel mogelijk zou moeten zijn en de messaging stack(Digikoppeling) nog wel in de lucht is. |

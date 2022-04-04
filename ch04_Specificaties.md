@@ -202,10 +202,8 @@ een tijdstempel. Het is een zogeheten functionele acknowledgement wat
 betekent dat de achterliggende (TMV-)applicatie het vraagbericht in
 goede orde ontvangen heeft.
 
-| | |
-|----------------------------------------------------------|----------|
-|----------------------------------------------------------|----------|
 | **Berichttype:** AnnotatieToevoegenResponse              |          |
+|----------------------------------------------------------|----------|
 | **Elementen/attributen**                                 |          |
 | AnnotatieToevoegenResponse                               |          |
 | AnnotatieToevoegenResponse . Tijdstempel<br>*Tijd waarop antwoord verstuurd is.* | \[1..1\] |
@@ -289,7 +287,6 @@ berichtenschema's is daarom slechts vastgelegd dat dit een string is.
 | Filter.StatusTerugmelding<br>*String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.* | \[0..1\]  |
 |---------------------------------------------------------|-----------|
 | Filter.Objectidentificatie<br>*String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.* | \[0..1\]  |
-|---------------------------------------------------------|-----------|
 
 [^1]: *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
 geldt dat **de laatste annotatie** is toegevoegd tussen
@@ -332,7 +329,6 @@ ondernomen.
 | Annotatie . Bronverwijzing . Selectie<br>*Object waarop is teruggemeld.* | \[0..1\]  |
 |---------------------------------------------------------|-----------|
 | Annotatie . Annotatiestatus<br>*Laatste status annotatie van de terugmelding.* | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 
 ### DetailsTerugmeldingRequest
 
@@ -356,32 +352,17 @@ Volgens het protocol kan ook een individuele leaf annotatie of een
 deelboom worden opgevraagd. Dit is nu in theorie mogelijk maar wordt in
 de praktijk niet toegepast en is niet getest.
 
-+----------------------------------------------------------+----------+
 | **Berichttype**: DetailsTerugmeldingRequest              |          |
-+==========================================================+==========+
+|----------------------------------------------------------|----------|
 | **Elementen/attributen**                                 |          |
-+----------------------------------------------------------+----------+
-| OinVragendeOrganisatie                                   | \[1..1\] |
-|                                                          |          |
-| *Identificatie d.m.v. OIN-vragende organisatie.*         |          |
-+----------------------------------------------------------+----------+
-| OinBasisregistratie                                      | \[1..1\] |
-|                                                          |          |
-| *\                                                       |          |
-| *Het OIN van de houder van een landelijke voorziening    |          |
-| van de basisregistratie                                  |          |
-+----------------------------------------------------------+----------+
-| Registratie                                              | \[0..1\] |
-|                                                          |          |
-| Code (maximaal 3 letterig) waarmee de basisregistratie   |          |
-| wordt aangeduid wanneer de houder van een landelijke     |          |
-| voorziening meer dan 1 basisregistratie beheert (bv BRT, |          |
-| BGT).                                                    |          |
-+----------------------------------------------------------+----------+
-| Uuid                                                     | \[1..1\] |
-|                                                          |          |
-| *UUID van root annotatie.*                               |          |
-+----------------------------------------------------------+----------+
+|----------------------------------------------------------|----------|
+| OinVragendeOrganisatie<br>*Identificatie d.m.v. OIN-vragende organisatie.* | \[1..1\] |
+|----------------------------------------------------------|----------|
+| OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\] |
+|----------------------------------------------------------|----------|
+| Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\] |
+|----------------------------------------------------------|----------|
+| Uuid<br>*UUID van root annotatie.*                       | \[1..1\] |
 
 ### DetailsTerugmeldingResponse
 
@@ -410,195 +391,60 @@ volgende soorten annotaties bevatten: Terugmelding, Annotatiestatus,
 Referentiekenmerk, Contactinformatie, Bijlageverwijzing,
 Planningsverwachting en BehandelendeBronhouder.
 
-+---------------------------------------------------------+-----------+
 | **Berichttype**: DetailsTerugmeldingResponse            |           |
-+=========================================================+===========+
 | **Elementen/attributen**                                |           |
-+---------------------------------------------------------+-----------+
 | **AnnotatieBoom**                                       | \[1..1\]  |
 |                                                         |           |
 | > *De container die de verzameling annotaties bevat die |           |
 | > ofwel het gevraagde UUID als kenmerk hebben of daar   |           |
 | > middels een annotatieverwijzing naar verwijzen.*      |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Terugmelding**                            | \[1..1\]  |
-|                                                         |           |
-| *De terugmelding (de annotatie die uiteindelijk de root |           |
-| annotatie zal worden)*                                  |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
+| **Annotatie . Terugmelding**<br>*De terugmelding (de annotatie die uiteindelijk de root annotatie zal worden)* | \[1..1\]  |
 | Terugmelding . **Annotatiebasis**                       |           |
-+---------------------------------------------------------+-----------+
-| Terugmelding . Bronverwijzingen                         | \[1..1\]  |
-|                                                         |           |
-| > *Bronverwijzingen bestaande uit één of meerdere       |           |
-| > bronverwijzing(en)*                                   |           |
-| >                                                       |           |
-| > *Lijst van verwijzingen met basisregistratie          |           |
-| > elementen waarop wordt teruggemeld.*                  |           |
-+---------------------------------------------------------+-----------+
-| Bronverwijzingen . Bronverwijzing                       | \[1..\*\] |
-|                                                         |           |
-| > *Bestaande uit een URI en een selectieverwijzing naar |           |
-| > het basisregistratie element waarop wordt             |           |
-| > teruggemeld. Dit mogen er meerdere zijn, maar in de   |           |
-| > huidige praktijk is dit er altijd precies één.*       |           |
-+---------------------------------------------------------+-----------+
-| Bronverwijzing.Uri                                      | \[1..1\]  |
-|                                                         |           |
-| > *De URI die de combinatie van basisregistratie en     |           |
-| > sleutel (bijvoorbeeld BSN of HRN) uniek               |           |
-| > identificeert.*                                       |           |
-+---------------------------------------------------------+-----------+
-| Bronverwijzing.Selectie                                 | \[0..\*\] |
-|                                                         |           |
-| > *Selectie van een element binnen de structuur die     |           |
-| > door de URI uniek geïdentificeerd wordt (bijvoorbeeld |           |
-| > onderneming).*                                        |           |
-+---------------------------------------------------------+-----------+
-| Terugmelding . Attributenset                            | \[1..1\]  |
-|                                                         |           |
-| > *De set van attributen die daadwerkelijk gewijzigd    |           |
-| > dienen te worden.*                                    |           |
-+---------------------------------------------------------+-----------+
-| Attributenset . Attribuut                               | \[1..\*\] |
-|                                                         |           |
-| > *Eén of meerdere attributen die gewijzigd dienen te   |           |
-| > worden.*                                              |           |
-+---------------------------------------------------------+-----------+
-| Attribuut . Uri                                         | \[1..1\]  |
-|                                                         |           |
-| > De unieke aanduiding van het attribuut                |           |
-+---------------------------------------------------------+-----------+
-| Attribuut . BetwijfeldeWaarde                           | \[0..1\]  |
-|                                                         |           |
-| > *De bestaande waarde in de basisregistratie.*         |           |
-+---------------------------------------------------------+-----------+
-| Attribuut . VoorgesteldeWaarde                          | \[0..1\]  |
-|                                                         |           |
-| > *De voorgestelde nieuwe waarde.*                      |           |
-+---------------------------------------------------------+-----------+
-| Terugmelding . Peilmoment                               | \[0..1\]  |
-|                                                         |           |
-| > *De datum waarop de betwijfelde waarde geldig is en   |           |
-| > de voorgestelde waarde geldig zou moeten zijn.*       |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Annotatiestatus**                         | \[1..\*\] |
-|                                                         |           |
-| > *Status van de terugmelding, de status met de meest   |           |
-| > recente datum GeannoteerdOp is de geldige status.*    |           |
-+---------------------------------------------------------+-----------+
+| Terugmelding . Bronverwijzingen<br>*Bronverwijzingen bestaande uit één of meerdere bronverwijzing(en)*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.* | \[1..1\]  |
+| Bronverwijzingen . Bronverwijzing<br>*Bestaande uit een URI en een selectieverwijzing naar het basisregistratie element waarop wordt teruggemeld. Dit mogen er meerdere zijn, maar in de huidige praktijk is dit er altijd precies één.*  | \[1..\*\] |
+| Bronverwijzing.Uri<br>*De URI die de combinatie van basisregistratie en sleutel (bijvoorbeeld BSN of HRN) uniek identificeert.* | \[1..1\]  |
+| Bronverwijzing.Selectie<br>  *Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).* | \[0..\*\] |
+| Terugmelding . Attributenset<br>*De set van attributen die daadwerkelijk gewijzigd dienen te worden.* | \[1..1\]  |
+| Attributenset . Attribuut<br>*Eén of meerdere attributen die gewijzigd dienen te worden.* | \[1..\*\] |
+| Attribuut . Uri<br>De unieke aanduiding van het attribuut | \[1..1\]  |
+| Attribuut . BetwijfeldeWaarde<br>*De bestaande waarde in de basisregistratie.* | \[0..1\]  |
+| Attribuut . VoorgesteldeWaarde<br>*De voorgestelde nieuwe waarde.* | \[0..1\]  |
+| Terugmelding . Peilmoment<br>*De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| **Annotatie . Annotatiestatus**<br>*Status van de terugmelding, de status met de meest recente datum GeannoteerdOp is de geldige status.* | \[1..\*\] |
 | Annotatiestatus . **Annotatiebasis**                    |           |
-+---------------------------------------------------------+-----------+
-| Annotatiestatus . Status                                | \[1..1\]  |
-|                                                         |           |
-| > *Zie bijlage B voor lijst met geadviseerde statussen  |           |
-| > voor aangesloten basisregistraties. Het is toegestaan |           |
-| > om in de eigen catalogus afwijkende statussen op te   |           |
-| > nemen)\                                               |           |
-| > *                                                     |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Referentiekenmerk**                       | \[1 \*\]  |
-|                                                         |           |
-| > *Eigen kenmerk terugmeldende organisatie (het mogen   |           |
-| > er meer zijn, in de huidige praktijk altijd precies   |           |
-| > één).*                                                |           |
-+---------------------------------------------------------+-----------+
+| Annotatiestatus . Status<br>*Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties. Het is toegestaan om in de eigen catalogus afwijkende statussen op te  nemen) | \[1..1\]  |
+|---------------------------------------------------------|-----------|
+| **Annotatie . Referentiekenmerk**<br>*Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).* | \[1 \*\]  |
 | **Referentiekenmerk.Annotatiebasis**                    |           |
-+---------------------------------------------------------+-----------+
-| Referentiekenmerk.Kenmerk                               | \[1..1\]  |
-|                                                         |           |
-| > *Eigen kenmerk terugmeldende organisatie.*            |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Contactinformatie**                       | \[1 \*\]  |
-|                                                         |           |
-| > *Contactgegevens.*                                    |           |
-+---------------------------------------------------------+-----------+
-| Contactinformatie . \@ContactType                       | \[1..1\]  |
-|                                                         |           |
-| *kan alleen de waarden \'Melder\' of \'Behandelaar\'    |           |
-| hebben*                                                 |           |
-+---------------------------------------------------------+-----------+
+| Referentiekenmerk.Kenmerk<br>*Eigen kenmerk terugmeldende organisatie.* | \[1..1\]  |
+|---------------------------------------------------------|-----------|
+| **Annotatie . Contactinformatie**<br>*Contactgegevens.* | \[1 \*\]  |
+| Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\]  |
 | **Contactinformatie . Annotatiebasis**                  |           |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Naam                                | \[1..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Telefoon                            | \[0..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Email                               | \[1..1\]  |
-+---------------------------------------------------------+-----------+
 | Contactinformatie . Afdeling                            | \[0..1\]  |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Bijlageverwijzing**                       | \[0..\*\] |
-|                                                         |           |
-| > *Metainformatie over bijlagen.*                       |           |
-| >                                                       |           |
-| > *Wordt in de praktijk niet ondersteund door BRP, HR   |           |
-| > ondersteunt er maximaal 5.*                           |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
+| **Annotatie . Bijlageverwijzing**<br>*Metainformatie over bijlagen.*<br>*Wordt in de praktijk niet ondersteund door BRP, HR ondersteunt er maximaal 5.* | \[0..\*\] |
 | Bijlageverwijzing . **Annotatiebasis**                  |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . Bestandsnaam                        | \[1..1\]  |
-|                                                         |           |
-| *De naam van het bestand.*                              |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . MIMEType                            | \[1..1\]  |
-|                                                         |           |
-| *Het MIME type van de bijlage.*                         |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . BijlageData                         | \[1..1\]  |
-|                                                         |           |
-| *Het bestand zelf in Base64-binary encoding.(\*)\       |           |
-| (\* Dit veld wordt bij een bericht                      |           |
-| '*DetailsTerugmeldingResponse' leeg gelaten )           |           |
-+---------------------------------------------------------+-----------+
-| Bijlageverwijzing . Beschrijving                        | \[0..1\]  |
-|                                                         |           |
-| > *Beschrijving van de bijlage. De bijlage zelf wordt   |           |
-| > nooit mee teruggeleverd bij het bevragen van een      |           |
-| > terugmelding/annotatie.\                              |           |
-| > *                                                     |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . Planningsverwachting**                    | \[0..\*\] |
-|                                                         |           |
-| > *Verwachte termijn voor behandeling, wordt alleen     |           |
-| > gebruikt door BRP en komt dan slechts eenmaal voor.*  |           |
-+---------------------------------------------------------+-----------+
+| Bijlageverwijzing . Bestandsnaam<br>*De naam van het bestand.* | \[1..1\]  |
+| Bijlageverwijzing . MIMEType<br>*Het MIME type van de bijlage.* | \[1..1\]  |
+| Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.[^2] | \[1..1\]  |
+| Bijlageverwijzing . Beschrijving<br>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie. | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| **Annotatie . Planningsverwachting**<br>*Verwachte termijn voor behandeling, wordt alleen gebruikt door BRP en komt dan slechts eenmaal voor.* | \[0..\*\] |
 | Planningsverwachting . **Annotatiebasis**               |           |
-+---------------------------------------------------------+-----------+
-| Planningsverwachting . MijlpaalAanduiding               | \[0..1\]  |
-|                                                         |           |
-| > *Beschrijving van de planningsverwachting.*           |           |
-+---------------------------------------------------------+-----------+
-| Planningsverwachting . MijlpaalTijdstempel              | \[0..1\]  |
-|                                                         |           |
-| > *Datum waarop de planning gereed is.*                 |           |
-+---------------------------------------------------------+-----------+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
-| **Annotatie . BehandelendeBronhouder**                  | \[0 \*\]  |
-|                                                         |           |
-| > *Behandelende bronhouder, huidige behandelaar is leaf |           |
-| > annotatie met meest recente tijdstempel.*             |           |
-+---------------------------------------------------------+-----------+
+| Planningsverwachting . MijlpaalAanduiding<br>*Beschrijving van de planningsverwachting.* | \[0..1\]  |
+| Planningsverwachting . MijlpaalTijdstempel<br>*Datum waarop de planning gereed is.*      | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder, huidige behandelaar is leaf annotatie met meest recente tijdstempel.* | \[0 \*\]  |
 | BehandelendeBronhouder . **Annotatiebasis**             |           |
-+---------------------------------------------------------+-----------+
-| BehandelendeBronhouder . Bronhouder                     | \[1..1\]  |
-|                                                         |           |
-| > *De bronhouder die de terugmelding momenteel in       |           |
-| > behandeling heeft.*                                   |           |
-+---------------------------------------------------------+-----------+
+| BehandelendeBronhouder . Bronhouder<br>*De bronhouder die de terugmelding momenteel in behandeling heeft.* | \[1..1\]  |
+
+[^2]: Dit veld wordt bij een bericht 'DetailsTerugmeldingResponse' leeg gelaten
 
 ## Echo
 
@@ -608,14 +454,14 @@ is.
 
 ### Algemeen
 
-  ---------------- ------------------------------------------------------------------------------------------------------------
-  Doel             Het ontvangen van een antwoordbericht waaruit blijkt dat de berichtverwerking conform specificaties werkt.
-  Voorwaarde       Geen.
-  Trigger          Behoefte om te controleren of berichtverwerking naar behoren functioneert.
-  Direct gevolg    Terugsturen van een echobericht.
-  Vervolgactie     Indien de echo faalt onderzoeken waardoor dit wordt veroorzaakt.
-  Bijzonderheden   
-  ---------------- ------------------------------------------------------------------------------------------------------------
+| | |
+|-----------------|--------------------------------------------------------------------------------------------------------------|
+|  Doel           |   Het ontvangen van een antwoordbericht waaruit blijkt dat de berichtverwerking conform specificaties werkt. |
+|  Voorwaarde     |   Geen.                                                                                                      |
+|  Trigger        |   Behoefte om te controleren of berichtverwerking naar behoren functioneert.                                 |
+|  Direct gevolg  |   Terugsturen van een echobericht.                                                                           |
+|  Vervolgactie   |   Indien de echo faalt onderzoeken waardoor dit wordt veroorzaakt.                                           |
+|  Bijzonderheden |   
 
 ![ Interactiediagram voor echo's](images/image10.png " Interactiediagram voor echo's")
 
@@ -625,44 +471,18 @@ is.
 
 De structuur van het echoverzoek is als volgt:
 
-+----------------------------------------------------------+----------+
 | **Berichttype: EchoRequest**                             |          |
-+==========================================================+==========+
-|                                                          |          |
-+----------------------------------------------------------+----------+
-| EchoRequest . OinBasisregistratie                        | \[1..1\] |
-|                                                          |          |
-| *Het OIN van de basisregistratie waar het echoverzoek    |          |
-| naar toe moet*                                           |          |
-+----------------------------------------------------------+----------+
-| EchoRequest .OinBasisregistratie                         | \[1..1\] |
-|                                                          |          |
-| *\                                                       |          |
-| *Het OIN van de houder van een landelijke voorziening    |          |
-| van de basisregistratie                                  |          |
-+----------------------------------------------------------+----------+
-| EchoRequest . Registratie                                | \[0..1\] |
-|                                                          |          |
-| Code (maximaal 3 letterig) waarmee de basisregistratie   |          |
-| wordt aangeduid wanneer de houder van een landelijke     |          |
-| voorziening meer dan 1 basisregistratie beheert (bv BRT, |          |
-| BGT).                                                    |          |
-+----------------------------------------------------------+----------+
-| EchoRequest . Echo                                       | \[1..1\] |
-|                                                          |          |
-| De string die geëchood moet worden                       |          |
-+----------------------------------------------------------+----------+
+|----------------------------------------------------------|----------|
+| EchoRequest . OinBasisregistratie<br>*Het OIN van de basisregistratie waar het echoverzoek    |          |
+| naar toe moet* | \[1..1\] |
+| EchoRequest .OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\] |
+| EchoRequest . Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\] |
+| EchoRequest . Echo<br>De string die geëchood moet worden | \[1..1\] |
 
 ### EchoResponse
 
 De structuur van het echo-antwoord is als volgt:
 
-+-------------------------------+----------+
 | **Berichttype: EchoResponse** |          |
-+===============================+==========+
-|                               |          |
-+-------------------------------+----------+
-| EchoResponse . Echo           | \[1..1\] |
-|                               |          |
-| De teruggestuurde echo string |          |
-+-------------------------------+----------+
+|-------------------------------|----------|
+| EchoResponse . Echo<br>De teruggestuurde echo string | \[1..1\] |
