@@ -219,14 +219,14 @@ huidige status van deze terugmeldingen.
 
 ### Algemeen
 
-  |      |      |
-  | :--- | :--- |
-  | Doel           |  Het opvragen van de status van terugmeldingen van een terugmeldende organisatie. |
-  | Voorwaarde     |  De organisatie heeft terugmeldingen gedaan.                                |
-  | Trigger        |  Een gebruiker wil de status van terugmeldingen van zijn organisatie weten. |
-  | Direct gevolg  |  De gebruiker is geïnformeerd over de status en eventueel extra detailinformatie van de terugmeldingen die hem interesseren.     |
-  | Vervolgactie   |  De gebruiker kan terugmeldingen van zijn organisatie intrekken op basis van de informatie verstrekt in het status overzicht. |
-  | Bijzonderheden  | \- |
+|      |      |
+| :--- | :--- |
+| Doel           |  Het opvragen van de status van terugmeldingen van een terugmeldende organisatie. |
+| Voorwaarde     |  De organisatie heeft terugmeldingen gedaan.                                |
+| Trigger        |  Een gebruiker wil de status van terugmeldingen van zijn organisatie weten. |
+| Direct gevolg  |  De gebruiker is geïnformeerd over de status en eventueel extra detailinformatie van de terugmeldingen die hem interesseren.     |
+| Vervolgactie   |  De gebruiker kan terugmeldingen van zijn organisatie intrekken op basis van de informatie verstrekt in het status overzicht. |
+| Bijzonderheden  | \- |
 
 ### StatusoverzichtRequest
 
@@ -261,78 +261,37 @@ terugmeldingen. Dit is enigszins bewerkelijk aangezien iedere
 basisregistratie zijn eigen statussen mag definiëren. In de
 berichtenschema's is daarom slechts vastgelegd dat dit een string is.
 
-+---------------------------------------------------------+-----------+
+
 | **Berichttype**: StatusoverzichtRequest                 |           |
-+=========================================================+===========+
+|---------------------------------------------------------|-----------|
 | **Elementen/attributen**                                |           |
 +---------------------------------------------------------+-----------+
-| OinVragendeOrganisatie                                  | \[1..1\]  |
-|                                                         |           |
-| *OIN van de vragende organisatie.*                      |           |
-+---------------------------------------------------------+-----------+
-| OinBasisregistratie                                     | \[1..1\]  |
-|                                                         |           |
-| *\                                                      |           |
-| *Het OIN van de houder van een landelijke voorziening   |           |
-| van de basisregistratie                                 |           |
-+---------------------------------------------------------+-----------+
-| Registratie                                             | \[0..1\]  |
-|                                                         |           |
-| Code (maximaal 3 letterig) waarmee de basisregistratie  |           |
-| wordt aangeduid wanneer de houder van een landelijke    |           |
-| voorziening meer dan 1 basisregistratie beheert (bv     |           |
-| BRT, BGT).                                              |           |
-+---------------------------------------------------------+-----------+
+| OinVragendeOrganisatie>br>*OIN van de vragende organisatie.*  | \[1..1\]  |
+|---------------------------------------------------------|-----------|
+| OinBasisregistratie<br>*Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\]  |
+|---------------------------------------------------------|-----------|
+| Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\]  |
+|---------------------------------------------------------|-----------|
 | **Filter**                                              | \[0..1\]  |
-+---------------------------------------------------------+-----------+
-| Filter.MeldingskenmerkenLijst                           | \[0..1\]  |
-|                                                         |           |
-| *(Lijst met)Eigen kenmerk(en) terugmeldende             |           |
-| organisatie.*                                           |           |
-+---------------------------------------------------------+-----------+
-| Fi                                                      | \[1..\*\] |
-| lter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement |           |
-+---------------------------------------------------------+-----------+
-| Filter.VanafTijdstempelIndienen                         | \[0..1\]  |
-|                                                         |           |
-| *Filtert resultaten die zijn ingediend voor dit         |           |
-| tijdstempel weg. Resultaten op de tijdstempel of daarna |           |
-| worden getoond.*                                        |           |
-+---------------------------------------------------------+-----------+
-| Filter.TotEnMetTijdstempelIndienen                      | \[0..1\]  |
-|                                                         |           |
-| *Filtert resultaten die zijn ingediend na dit           |           |
-| tijdstempel weg. Resultaten op de tijdstempel of        |           |
-| daarvoor worden getoond.*                               |           |
-+---------------------------------------------------------+-----------+
-| Filter.VanafTijdstempelWijziging                        | \[0..1\]  |
-|                                                         |           |
-| *Filtert resultaten die zijn gewijzigd voor dit         |           |
-| tijdstempel weg. Resultaten op de tijdstempel of daarna |           |
-| worden getoond.(\*)\                                    |           |
-| *                                                       |           |
-+---------------------------------------------------------+-----------+
-| Filter.TotEnMetTijdstempelWijziging                     | \[0..1\]  |
-|                                                         |           |
-| *Filtert resultaten die zijn gewijzigd na dit           |           |
-| tijdstempel weg. Resultaten op de tijdstempel of        |           |
-| daarvoor worden getoond.(\*)*                           |           |
-+---------------------------------------------------------+-----------+
-| Filter.StatusTerugmelding                               | \[0..1\]  |
-|                                                         |           |
-| *String met daarin een status behorende bij de          |           |
-| basisregistratie waarvan het overzicht gevraagd wordt.* |           |
-+---------------------------------------------------------+-----------+
-| Filter.Objectidentificatie                              | \[0..1\]  |
-|                                                         |           |
-| *String met daarin een objectidentificatie behorende    |           |
-| bij de basisregistratie waarvan het overzicht gevraagd  |           |
-| wordt. Hiermee kunnen terugmeldingen ook op basis van   |           |
-| KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden       |           |
-| worden.*                                                |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
+| Filter.MeldingskenmerkenLijst<br>*(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement | \[1..\*\] |
+|---------------------------------------------------------|-----------|
+| Filter.VanafTijdstempelIndienen<br>*Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.*   | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| Filter.TotEnMetTijdstempelIndienen<br>  *Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| Filter.VanafTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^1].* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| Filter.TotEnMetTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^1].* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| Filter.StatusTerugmelding<br>*String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| Filter.Objectidentificatie<br>*String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
 
-(\*) *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
+[^1]: *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
 geldt dat **de laatste annotatie** is toegevoegd tussen
 VanafTijdstempelWijziging en TotEnMetTijdstempelWijziging
 
@@ -352,44 +311,28 @@ deze foutsituaties op zijn plaats omdat dit geen kritieke fouten zijn en
 het aan de afnemer is om te bepalen of hier actie op moet worden
 ondernomen.
 
-+---------------------------------------------------------+-----------+
 | **Berichttype**: StatusoverzichtResponse                |           |
-+=========================================================+===========+
+|---------------------------------------------------------|-----------|
 | **Elementen/attributen**                                |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
 | **AnnotatieLijst**                                      | \[1..\*\] |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
 | Annotatie                                               | \[0..\*\] |
-+---------------------------------------------------------+-----------+
-| Annotatie . Tijdstempel                                 | \[1..1\]  |
-|                                                         |           |
-| *Datum/tijd waarop de annotatie heeft plaatsgevonden*   |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Uuid                                        | \[1..1\]  |
-|                                                         |           |
-| *Unieke verwijzing naar de root annotatie van een       |           |
-| annotatieboom.*                                         |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Meldingskenmerk                             | \[1..1\]  |
-|                                                         |           |
-| *Eigen kenmerk terugmeldende organisatie.*              |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
+| Annotatie . Tijdstempel<br>*Datum/tijd waarop de annotatie heeft plaatsgevonden* | \[1..1\]  |
+|---------------------------------------------------------|-----------|
+| Annotatie . Uuid<br>*Unieke verwijzing naar de root annotatie van een annotatieboom.* | \[1..1\]  |
+|---------------------------------------------------------|-----------|
+| Annotatie . Meldingskenmerk<br>*Eigen kenmerk terugmeldende organisatie.* | \[1..1\]  |
+|---------------------------------------------------------|-----------|
 | Annotatie . Bronverwijzing                              | \[1..1\]  |
-+---------------------------------------------------------+-----------+
-| Annotatie . Bronverwijzing . Uri                        | \[1..1\]  |
-|                                                         |           |
-| *Een combinatie van OIN en de unieke sleutel van het    |           |
-| brongegeven zodat een unieke referentie ontstaat naar   |           |
-| het brongegeven (bijv. OIN en HRN).*                    |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Bronverwijzing . Selectie                   | \[0..1\]  |
-|                                                         |           |
-| *Object waarop is teruggemeld.*                         |           |
-+---------------------------------------------------------+-----------+
-| Annotatie . Annotatiestatus                             | \[1..1\]  |
-|                                                         |           |
-| *Laatste status annotatie van de terugmelding.*         |           |
-+---------------------------------------------------------+-----------+
+|---------------------------------------------------------|-----------|
+| Annotatie . Bronverwijzing . Uri<br>*Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).* | \[1..1\]  |
+|---------------------------------------------------------|-----------|
+| Annotatie . Bronverwijzing . Selectie<br>*Object waarop is teruggemeld.* | \[0..1\]  |
+|---------------------------------------------------------|-----------|
+| Annotatie . Annotatiestatus<br>*Laatste status annotatie van de terugmelding.* | \[1..1\]  |
+|---------------------------------------------------------|-----------|
 
 ### DetailsTerugmeldingRequest
 
