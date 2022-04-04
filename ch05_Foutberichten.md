@@ -67,6 +67,8 @@ vanuit dat dit ook gebeurt voor de fouten die hier beschreven worden. De
 foutafhandeling dient in de terugmeldapplicatie plaats te vinden. Binnen
 de SOAP Fault wordt een aantal velden onderkend te weten:
 
+[^4]: Zie voorstel ["foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"](https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab)
+
 +---------------------------------------------------------+-----------+
 | **Berichttype**: DigimeldingSynchroonFault              |           |
 |                                                         |           |
