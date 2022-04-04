@@ -151,7 +151,6 @@ als volgt:
 
 De volgende structuur is in de XML-structuur child van de 'Annotatie'.
 
-
 | | |
 |---------------------------------------------------------|-----------|
 | **Annotatiestatus**<br>*Status van de terugmelding.*    | \[1..\*\] |
@@ -167,7 +166,7 @@ De volgende structuur is in de XML-structuur child van de 'Annotatie'.
 | **Annotatiestatus . Annotatiebasis**<br>Inclusief toelichting en annotatieverwijzing   |           |
 | Annotatiestatus . Status<br>*Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)* | \[0..1\]  |
 | Annotatiestatus . Statustype                            | \[0..1\]  |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . Contactinformatie**<br>*Contactgegevens.* | \[0..\*\] |
 | Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\]  |
 | **Contactinformatie . Annotatiebasis**                  |           |
@@ -175,12 +174,12 @@ De volgende structuur is in de XML-structuur child van de 'Annotatie'.
 | Contactinformatie . Telefoon                            | \[0..1\]  |
 | Contactinformatie . Email                               | \[1..1\]  |
 | Contactinformatie . Afdeling                            | \[0..1\]  |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . Planningsverwachting**<br>*Verwachte termijn voor behandeling* | \[0..\*\] |
 | Planningsverwachting . **Annotatiebasis**               |           |
 | Planningsverwachting . MijlpaalAanduiding<br>*Beschrijving van de planningsverwachting.* | \[0..1\] |
 | Planningsverwachting . MijlpaalTijdstempel<br>*Datum waarop de planning gereed is.*      | \[0..1\] |
-|---------------------------------------------------------|-----------|
+|                                                         |           |
 | **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder* | \[0 \*\] |
 | BehandelendeBronhouder . **Annotatiebasis**             |           |
 | BehandelendeBronhouder . Bronhouder<br>*De gewenste bronhouder (bij status "Verkeerde Bronhouder")* | \[1..1\] |
@@ -261,32 +260,20 @@ berichtenschema's is daarom slechts vastgelegd dat dit een string is.
 | **Berichttype**: StatusoverzichtRequest                 |           |
 |---------------------------------------------------------|-----------|
 | **Elementen/attributen**                                |           |
-+---------------------------------------------------------+-----------+
 | OinVragendeOrganisatie>br>*OIN van de vragende organisatie.*  | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 | OinBasisregistratie<br>*Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\]  |
-|---------------------------------------------------------|-----------|
 | Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\]  |
-|---------------------------------------------------------|-----------|
 | **Filter**                                              | \[0..1\]  |
-|---------------------------------------------------------|-----------|
 | Filter.MeldingskenmerkenLijst<br>*(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.* | \[0..1\]  |
-|---------------------------------------------------------|-----------|
 | Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement | \[1..\*\] |
-|---------------------------------------------------------|-----------|
 | Filter.VanafTijdstempelIndienen<br>*Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.*   | \[0..1\]  |
-|---------------------------------------------------------|-----------|
 | Filter.TotEnMetTijdstempelIndienen<br>  *Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.* | \[0..1\]  |
-|---------------------------------------------------------|-----------|
-| Filter.VanafTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^1].* | \[0..1\]  |
-|---------------------------------------------------------|-----------|
-| Filter.TotEnMetTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^1].* | \[0..1\]  |
-|---------------------------------------------------------|-----------|
+| Filter.VanafTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^7].* | \[0..1\]  |
+| Filter.TotEnMetTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^7].* | \[0..1\]  |
 | Filter.StatusTerugmelding<br>*String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.* | \[0..1\]  |
-|---------------------------------------------------------|-----------|
 | Filter.Objectidentificatie<br>*String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.* | \[0..1\]  |
 
-[^1]: *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
+[^7]: *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
 geldt dat **de laatste annotatie** is toegevoegd tussen
 VanafTijdstempelWijziging en TotEnMetTijdstempelWijziging
 
