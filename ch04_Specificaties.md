@@ -108,7 +108,7 @@ als volgt:
 | Terugmelding.**Annotatiebasis** |                      |           |
 | Terugmelding.Bronverwijzingen                   | Bronverwijzingen bestaande uit één of meerdere bronverwijzing*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld. | \[1..1\] |
 | Terugmelding.Bronverwijzingen. Bronverwijzing   | Bestaande uit een URI en een selectieverwijzing naar het basisregistratie-element waarop wordt teruggemeld. Dit zijn er meerdere, maar in de huidige praktijk is dit er altijd precies één. | \[1..\*\] |
-| Terugmelding.Bronverwijzingen .Bronverwijzing.Uri | Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN). | \[1..1\] |
+| Terugmelding.Bronverwijzingen. Bronverwijzing.Uri | Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN). | \[1..1\] |
 | Terugmelding.Bronverwijzingen. Bronverwijzing.Selectie | Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming). | \[0..\*\] |
 | Terugmelding . Attributenset    | De set van attributen die daadwerkelijk gewijzigd dienen te worden. | \[1..1\] |
 | Attribuut                     | Eén of meerdere attributen die gewijzigd dienen te worden.           | \[1..\*\] |
@@ -148,38 +148,36 @@ als volgt:
 
 De volgende structuur is in de XML-structuur child van de 'Annotatie'.
 
-| | |
-|---------------------------------------------------------|-----------|
-| **Annotatiestatus**<br>*Status van de terugmelding.*    | \[1..\*\] |
-| **Annotatiestatus . Annotatiebasis**<br>Inclusief toelichting en annotatieverwijzing  |           |
-| Annotatiestatus . Status<br>Een afnemer kan bij het doen van een intrekking alleen de status: INGETROKKEN gebruiken in de huidige praktijk. | \[0..1\]  |
+| **Annotatiestatus**    | Status van de terugmelding.       | \[1..\*\] |
+|------------------------|-----------------------------------|-----------|
+| **Annotatiestatus.Annotatiebasis**  | Inclusief toelichting en annotatieverwijzing  |           |
+| Annotatiestatus.Status | Een afnemer kan bij het doen van een intrekking alleen de status: INGETROKKEN gebruiken in de huidige praktijk. | \[0..1\]  |
 
 **Annotatie toevoegen (statuswijziging)**
 De volgende structuur is in de XML-structuur child van de 'Annotatie'.
 
-| | |
-|---------------------------------------------------------|-----------|
-| **Annotatiestatus**<br>*Status van de terugmelding.*    | \[1..\*\] |
-| **Annotatiestatus . Annotatiebasis**<br>Inclusief toelichting en annotatieverwijzing   |           |
-| Annotatiestatus . Status<br>*Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen)* | \[0..1\]  |
-| Annotatiestatus . Statustype                            | \[0..1\]  |
-|                                                         |           |
-| **Annotatie . Contactinformatie**<br>*Contactgegevens.* | \[0..\*\] |
-| Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\]  |
-| **Contactinformatie . Annotatiebasis**                  |           |
-| Contactinformatie . Naam                                | \[1..1\]  |
-| Contactinformatie . Telefoon                            | \[0..1\]  |
-| Contactinformatie . Email                               | \[1..1\]  |
-| Contactinformatie . Afdeling                            | \[0..1\]  |
-|                                                         |           |
-| **Annotatie . Planningsverwachting**<br>*Verwachte termijn voor behandeling* | \[0..\*\] |
-| Planningsverwachting . **Annotatiebasis**               |           |
-| Planningsverwachting . MijlpaalAanduiding<br>*Beschrijving van de planningsverwachting.* | \[0..1\] |
-| Planningsverwachting . MijlpaalTijdstempel<br>*Datum waarop de planning gereed is.*      | \[0..1\] |
-|                                                         |           |
-| **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder* | \[0 \*\] |
-| BehandelendeBronhouder . **Annotatiebasis**             |           |
-| BehandelendeBronhouder . Bronhouder<br>*De gewenste bronhouder (bij status "Verkeerde Bronhouder")* | \[1..1\] |
+| **Annotatiestatus**  | Status van de terugmelding.      | \[1..\*\] |
+|----------------------|----------------------------------|-----------|
+| **Annotatiestatus.Annotatiebasis** | Inclusief toelichting en annotatieverwijzing   |           |
+| Annotatiestatus.Status             | Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties.(Het is toegestaan om in de eigen catalogus afwijkende statussen op te nemen) | \[0..1\]  |
+| Annotatiestatus.Statustype         |                     | \[0..1\]  |
+|                                    |                     |           |
+| **Annotatie.Contactinformatie**    | Contactgegevens.    | \[0..\*\] |
+| Contactinformatie.\@ContactType    | Kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben. | \[1..1\]  |
+| **Contactinformatie.Annotatiebasis** |                 |           |
+| Contactinformatie.Naam             |                   | \[1..1\]  |
+| Contactinformatie.Telefoon         |                   | \[0..1\]  |
+| Contactinformatie.Email            |                   | \[1..1\]  |
+| Contactinformatie.Afdeling         |                   | \[0..1\]  |
+|                                    |                   |           |
+| **Annotatie.Planningsverwachting** | Verwachte termijn voor behandeling. | \[0..\*\] |
+| Planningsverwachting.**Annotatiebasis** |              |           |
+| Planningsverwachting.MijlpaalAanduiding  | Beschrijving van de planningsverwachting. | \[0..1\] |
+| Planningsverwachting.MijlpaalTijdstempel | Datum waarop de planning gereed is.       | \[0..1\] |
+|                                          |             |           |
+| **Annotatie.BehandelendeBronhouder**     | Behandelende bronhouder | \[0 \*\] |
+| BehandelendeBronhouder.**Annotatiebasis** |            |           |
+| BehandelendeBronhouder.Bronhouder   | De gewenste bronhouder (bij status "Verkeerde Bronhouder") | \[1..1\] |
 
 Optioneel kan bij een statuswijziging worden meegezonden:
 
