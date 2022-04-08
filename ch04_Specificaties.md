@@ -10,16 +10,11 @@ elkaar verhouden en in welke volgorde de berichten worden gebruikt.
 Per bericht wordt aangegeven (indien relevant):
 
 -   berichtnaam;
-
 -   trigger van het bericht;
-
 -   verandering in terugmeldapplicatie/Digimelding Webservice/LV
     basisregistratie ten gevolge van het bericht;
-
 -   lijst van objecten en velden in het bericht, en per veld:
-
     -   specificatie van de vulling van het veld,
-
     -   toelichting, bijvoorbeeld met de gebruikersactie of configuratie
         die nodig is om de juiste vulling te krijgen.
 
@@ -55,6 +50,18 @@ annotatiebasis bevat.
 | GeannoteerdOp<br>*Tijdstempel waarop de annotatie heeft plaatsgevonden*.     | \[1..1\] |
 | Toelichting<br>*Een toelichting bij de annotatie. In de huidige praktijk in gebruik voor root annotaties en status leaf annotaties voor overige leaf annotaties in de huidige praktijk altijd leeg.*                         | \[0..1\] |
 | Annotatieverwijzing<br>*Verwijzing naar de root annotatie waar een leaf annotatie aan gerelateerd is. Dit wordt afhankelijk  van de relevantie opgenomen.*                          | \[0..1\] |
+
+**Tabel Annotatiebasis**
+| Parameter | Betekenis | Relaties |
+| :---      | :---      |   :---:  |
+| \@uuid    | Unieke identificatie van de annotatie. | \[1..1\]  |
+| GeannoteerdDoor             | Gegevens van diegene die de annotatie heeft toegevoegd. | \[1..1\] |
+| GeannoteerdDoor . Oin       | OIN van de terugmeldende organisatie.                   | \[1..1\] |
+| GeannoteerdDoor . Vestiging | Vestigingsnummer van desbetreffende organisatie uit eHerkenning/SSOn Rijk (indien door de afnemer toegepast voor authenticatie). | \[0..1\] |
+| GeannoteerdDoor . Persoonsaanduiding | Deze zal met webservices bijna altijd de waarde "anoniem" hebben. Er zijn twee uitzonderingen. De eerste is wanneer nadere afspraken gemaakt zijn met een basisregistratie over de invulling van dit veld. De tweede is dat, indien binnen de organisatie eHerkenning/SSOn Rijk gebruikt is voor autorisatie en authenticatie, persoonsaanduiding uit eHerkenning/SSOn Rijk dient te worden meegegeven. | \[1..1\] |
+| GeannoteerdOp | Tijdstempel waarop de annotatie heeft plaatsgevonden.                 | \[1..1\] |
+| Toelichting   | Een toelichting bij de annotatie. In de huidige praktijk in gebruik voor root annotaties en status leaf annotaties voor overige leaf annotaties in de huidige praktijk altijd leeg. | \[0..1\] |
+| Annotatieverwijzing | Verwijzing naar de root annotatie waar een leaf annotatie aan gerelateerd is. Dit wordt afhankelijk  van de relevantie opgenomen. | \[0..1\] |
 
 ## Annotatie versturen
 

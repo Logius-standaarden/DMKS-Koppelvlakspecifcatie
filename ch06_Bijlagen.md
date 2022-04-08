@@ -41,17 +41,5 @@ afgebeeld.
   Eindstatus                                                                                                                                          
   overgang mogelijk        X                                                                                                                          
 
-
-
-[^3]: Best Effort, beveiligd met tweezijdige TLS en gesigneerde
-    berichten
-
-[^4]: Zie voorstel "foutafhandeling synchrone berichten" van de
-    "gemeenschappelijke afspraken berichtstandaarden"
-    <https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab>
-
 [^5]: Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1
-    voor uitleg
-
-[^6]: Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1
     voor uitleg

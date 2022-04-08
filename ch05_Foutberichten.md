@@ -69,25 +69,16 @@ de SOAP Fault wordt een aantal velden onderkend te weten:
 
 [^4]: Zie voorstel ["foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"](https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab)
 
-+---------------------------------------------------------+-----------+
-| **Berichttype**: DigimeldingSynchroonFault              |           |
-|                                                         |           |
-| *Synchrone foutafhandeling gaat middels een SOAP Fault* |           |
-+=========================================================+===========+
-|                                                         |           |
-+---------------------------------------------------------+-----------+
+|  |  |
+|---------------------------------------------------------|           |
+| **Berichttype**: DigimeldingSynchroonFault<br>*Synchrone foutafhandeling gaat middels een SOAP Fault* |           |
 | faultcode                                               | \[1..1\]  |
 |                                                         |           |
 | *De plek waar de fout is opgetreden, één string         |           |
 | opgebouwd uit de elementen                              |           |
 | \<Defaultwaarde\>.\<Code\>.\<OmschrijvingKort\> :*      |           |
 |                                                         |           |
-| Defaultwaarde\                                          |           |
-| *Bevat één van de defaultwaarden VersionMismatch,       |           |
-| MustUnderstand, Client en Server.*[^6] *Voor            |           |
-| Digimeldingpraktijk zijn alleen Client- of              |           |
-| Server-waarden relevant om aan te geven wat de aard van |           |
-| de fout is.*                                            |           |
+| Defaultwaarde<br>*Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.*[^6] *Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.* |           |
 |                                                         |           |
 | Code\                                                   |           |
 | *De specifieke foutcode die hoort bij de technische     |           |
@@ -130,21 +121,11 @@ de SOAP Fault wordt een aantal velden onderkend te weten:
 | *De ontvanger is niet verplicht deze tekst over te      |           |
 | nemen.*                                                 |           |
 +---------------------------------------------------------+-----------+
-| faultactor                                              | \[0..\*\] |
-|                                                         |           |
-| *Bevat een URI van de antwoordende service.*            |           |
-|                                                         |           |
-| *Vul de faultactor in met de URI van de bron van de     |           |
-| oorzaak, indien het SOAP-bericht langs een              |           |
-| tussenstation gaat. Bijvoorbeeld Digimelding            |           |
-| Webservice.*                                            |           |
+| faultactor<br>*Bevat een URI van de antwoordende service.*<br>*Vul de faultactor in met de URI van de bron van de oorzaak, indien het SOAP-bericht langs een tussenstation gaat. Bijvoorbeeld Digimelding Webservice.*  | \[0..\*\] |
 +---------------------------------------------------------+-----------+
-| faultdetail                                             | \[0..\*\] |
-|                                                         |           |
-| *Volledig vrij veld om nadere toelichting op de fout te |           |
-| geven, kan gebruikt worden om bijv. achterliggende      |           |
-| applicatiefoutmeldingen mee te geven (xs:any).*         |           |
-+---------------------------------------------------------+-----------+
+| faultdetail<br>*Volledig vrij veld om nadere toelichting op de fout te geven, kan gebruikt worden om bijv. achterliggende applicatiefoutmeldingen mee te geven (xs:any).* | \[0..\*\] |
+
+[^6]: Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1 voor uitleg
 
 Voorbeeld:
 
