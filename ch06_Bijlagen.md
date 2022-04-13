@@ -1,6 +1,6 @@
 # bijlagen
 
-## Bijlage A: Afkortingen, begrippen en symbolen {#bijlage-a-afkortingen-begrippen-en-symbolen .list-paragraph}
+## Bijlage A: Afkortingen, begrippen en symbolen
 
 | **Afkorting** | **Omschrijving**                           |
 |---------------|------------------------------------------- |
@@ -13,7 +13,7 @@
 |  NUP          |  Nationaal Uitvoeringsprogramma            |
 |  StUF         |  Standaarduitwisselingsformaat             |
 
-## Bijlage B : Geadviseerde Statussen {#bijlage-b-geadviseerde-statussen .list-paragraph}
+## Bijlage B : Geadviseerde Statussen
 
 *Diagram*
 
@@ -39,6 +39,3 @@ afgebeeld.
 
   Eindstatus                                                                                                                                          
   overgang mogelijk        X                                                                                                                          
-
-[^5]: Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1
-    voor uitleg
