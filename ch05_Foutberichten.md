@@ -72,61 +72,17 @@ de SOAP Fault wordt een aantal velden onderkend te weten:
 <sup>6</sup> Zie voorstel ["foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"](https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab)
 </p>
 
-|  |  |
-|---------------------------------------------------------|           |
-| **Berichttype**: DigimeldingSynchroonFault<br>*Synchrone foutafhandeling gaat middels een SOAP Fault* |           |
-| faultcode                                               | \[1..1\]  |
+|  |  |  |
+|---------------------------------------------------------|----------|-------|
+| **Berichttype**: DigimeldingSynchroonFault | *Synchrone foutafhandeling gaat middels een SOAP Fault* |           |
+| faultcode        | *De plek waar de fout is opgetreden, één string opgebouwd uit de elementen \<Defaultwaarde\>.\<Code\>.\<OmschrijvingKort\> :*        | \[1..1\]  |
+|                  | Defaultwaarde: *Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.*<sup>7</sup> *Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.* |           |
+|                  | Code: *De specifieke foutcode die hoort bij de technische fout (format: \<afkortingbron\>\<codering van fout\>.*  |           |
 |                                                         |           |
-| *De plek waar de fout is opgetreden, één string         |           |
-| opgebouwd uit de elementen                              |           |
-| \<Defaultwaarde\>.\<Code\>.\<OmschrijvingKort\> :*      |           |
-|                                                         |           |
-| Defaultwaarde<br>*Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.*<sup>7</sup> *Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.* |           |
-|                                                         |           |
-| Code\                                                   |           |
-| *De specifieke foutcode die hoort bij de technische     |           |
-| fout (format: \<afkortingbron\>\<codering van fout\>.*  |           |
-|                                                         |           |
-| OmschrijvingKort *\                                     |           |
-| De korte omschrijving van de fout (bijvoorbeeld: de     |           |
-| Digikoppeling omschrijving uit de lijst met             |           |
-| foutmeldingen.*                                         |           |
-|                                                         |           |
-| Voorbeeld:\<soap:Fault\>                                |           |
-| \<fa                                                    |           |
-| ultcode\>*soap:Server*\</faultcode\>                    |           |
-| \                                                       |           |
-| <faultstring\>*Fout*\</faultstring\>                    |           |
-| \<detail\>                                              |           |
-| **\<DigimeldingSynchroonFault**                         |           |
-| xmlns=\"h                                               |           |
-| ttp://webservices.digimelding.nl/dmks/cookiebox/\"\>    |           |
-|                                                         |           |
-| \<faultcode\>*001*\</faultcode\>                        |           |
-|                                                         |           |
-| \<faultstring\>*Foutmelding*                            |           |
-| \</faultstring\>                                        |           |
-|                                                         |           |
-| \<faultactor\>*Actor*\</faultactor\>                    |           |
-|                                                         |           |
-| \<faultdetail/\>                                        |           |
-| **\</DigimeldingSynchroonFault\>**                      |           |
-| \</detail\>\</soap:Fault\>                              |           |
-+---------------------------------------------------------+-----------+
-| faultstring                                             | \[1..1\]  |
-|                                                         |           |
-| *De eigen meer gedetailleerde beschrijving van de       |           |
-| foutsituatie.*                                          |           |
-|                                                         |           |
-| *De eigen beschrijving zoveel mogelijk geschikt maken   |           |
-| voor het kunnen presenteren aan gebruiker.*             |           |
-|                                                         |           |
-| *De ontvanger is niet verplicht deze tekst over te      |           |
-| nemen.*                                                 |           |
-+---------------------------------------------------------+-----------+
-| faultactor<br>*Bevat een URI van de antwoordende service.*<br>*Vul de faultactor in met de URI van de bron van de oorzaak, indien het SOAP-bericht langs een tussenstation gaat. Bijvoorbeeld Digimelding Webservice.*  | \[0..\*\] |
-+---------------------------------------------------------+-----------+
-| faultdetail<br>*Volledig vrij veld om nadere toelichting op de fout te geven, kan gebruikt worden om bijv. achterliggende applicatiefoutmeldingen mee te geven (xs:any).* | \[0..\*\] |
+|                  | OmschrijvingKort: De korte omschrijving van de fout (bijvoorbeeld: de Digikoppeling omschrijving uit de lijst met foutmeldingen.* _Zie onderstaand voorbeeld._  |           |
+| faultstring      | *De eigen meer gedetailleerde beschrijving van de foutsituatie.*<br>*De eigen beschrijving zoveel mogelijk geschikt maken voor het kunnen presenteren aan gebruiker.*<br>*De ontvanger is niet verplicht deze tekst over te nemen.*  | \[1..1\]  |
+| faultactor       | *Bevat een URI van de antwoordende service.*<br>*Vul de faultactor in met de URI van de bron van de oorzaak, indien het SOAP-bericht langs een tussenstation gaat. Bijvoorbeeld Digimelding Webservice.*  | \[0..\*\] |
+| faultdetail      | *Volledig vrij veld om nadere toelichting op de fout te geven, kan gebruikt worden om bijv. achterliggende applicatiefoutmeldingen mee te geven (xs:any).* | \[0..\*\] |
 
 <p class="note">
 <sup>7</sup> Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1 voor uitleg
