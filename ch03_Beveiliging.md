@@ -41,11 +41,12 @@ het DMKS-bericht doorgegeven te worden. In deze gevallen is de
 autorisatie voor de TMV-applicatie geregeld middels eHerkenning op
 persoonsniveau.
 
-~~[^1]: De eHerkenningmiddelenleverancier stuurt een SAML token terug met daarin
+<p class="note" name="noot-eHerkenning">
+De eHerkenningmiddelenleverancier stuurt een SAML token terug met daarin
 o.a. het 'OIN' zoals in de eHerkenningskoppelvlakstandaard is
 gespecificeerd. Dit 'OIN' met een prefix 00000003 is niet gelijk aan
 het door Logius uitgegeven OIN zoals in het OIN-register is
-opgenomen.~~
+opgenomen.</p>
 
 Indien in de keten de terugmelder met SSOn-Rijk geauthenticeerd wordt,
 willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
