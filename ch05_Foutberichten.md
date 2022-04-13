@@ -1,6 +1,7 @@
 
 # Foutberichten
 
+| Begrip            | Toelichting                                             |
 |-------------------|---------------------------------------------------------|
 |  Doel             | Aangeven dat er een fout is opgetreden.                 |
 |  Voorwaarde       | Een foutbericht is altijd een reactie op een reeds verzonden bericht, dus één van de vraagberichten uit de voorgaande secties (AnnotatieToevoegenRequest, StatusoverzichtRequest, DetailsTerugmeldingRequest). |
