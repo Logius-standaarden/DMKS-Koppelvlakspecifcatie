@@ -22,20 +22,3 @@ In onderstaand figuur zijn de verschillende statussen en hun relatie
 afgebeeld.
 
 ![Digimelding proces](images/digimelding.svg "Digimelding proces")
-
-*Definities*
-
-  naar                     *geen*   Gemeld   In behandeling   Ingetrokken   Onvoldoende informatie   Verkeerde Bronhouder   Ingepland   Afgehandeld   
-  ------------------------ -------- -------- ---------------- ------------- ------------------------ ---------------------- ----------- ------------- --
-  van                                                                                                                                                 
-  *Geen*                            x                                                                                                                 
-  Gemeld                                     x                x             x                        x                                                
-  In behandeling                                              x                                                             x           x             
-  Ingetrokken                                                                                                                                         
-  Onvoldoende informatie                                                                                                                              
-  Verkeerde Bronhouder              x                         x                                       x                                               
-  Ingepland                                                                                                                             x             
-  Afgehandeld                                                                                                                                         
-
-  Eindstatus                                                                                                                                          
-  overgang mogelijk        X                                                                                                                          
