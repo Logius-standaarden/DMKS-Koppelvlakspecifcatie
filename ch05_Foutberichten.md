@@ -135,7 +135,7 @@ de SOAP Fault wordt een aantal velden onderkend te weten:
 Voorbeeld:
 
 <aside class="example" title="Foutcode"><pre>
-\<soap:Fault\>
+<soap:Fault>
   \<faultcode\>*soap:Server*\</faultcode\>
   \<faultstring\>*Fout*\</faultstring\>
   \<detail\>
