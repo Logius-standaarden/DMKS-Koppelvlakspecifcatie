@@ -134,20 +134,20 @@ de SOAP Fault wordt een aantal velden onderkend te weten:
 
 Voorbeeld:
 
-<aside class="example" title="Foutcode"><code>
-<soap:Fault>
-  <faultcode>*soap:Server*</faultcode>
-  <faultstring>*Fout*</faultstring>
-  <detail>
-    **<DigimeldingSynchroonFault** xmlns=\"<http://webservices.digimelding.nl/dmks/cookiebox/>">
-    <faultcode>*001*</faultcode>
-    <faultstring>*Foutmelding* </faultstring>
-    <faultactor>*Actor*</faultactor>
-    <faultdetail/>
-    **</DigimeldingSynchroonFault>**
-  </detail>
-</soap:Fault>
-</code></aside>
+<aside class="example" title="Foutcode"><pre>
+\<soap:Fault\>
+  \<faultcode\>*soap:Server*\</faultcode\>
+  \<faultstring\>*Fout*\</faultstring\>
+  \<detail\>
+    **<DigimeldingSynchroonFault** xmlns=\"\<http://webservices.digimelding.nl/dmks/cookiebox/\>\"\>
+    \<faultcode\>*001*\</faultcode\>
+    \<faultstring\>*Foutmelding*\</faultstring\>
+    \<faultactor\>*Actor*\</faultactor\>
+    \<faultdetail/\>
+    **\</DigimeldingSynchroonFault\>**
+  \</detail\>
+\</soap:Fault\>
+</pre></aside>
 
 Generieke foutcodes van toepassing op Digimelding
 -------------------------------------------------
