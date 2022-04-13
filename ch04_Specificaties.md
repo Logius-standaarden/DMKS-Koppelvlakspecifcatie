@@ -262,14 +262,16 @@ berichtenschema's is daarom slechts vastgelegd dat dit een string is.
 | Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement | \[1..\*\] |
 | Filter.VanafTijdstempelIndienen<br>*Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.*   | \[0..1\]  |
 | Filter.TotEnMetTijdstempelIndienen<br>  *Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.* | \[0..1\]  |
-| Filter.VanafTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond[^7].* | \[0..1\]  |
-| Filter.TotEnMetTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond[^7].* | \[0..1\]  |
+| Filter.VanafTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond<sup>4</sup>.* | \[0..1\]  |
+| Filter.TotEnMetTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond<sup>4</sup>.* | \[0..1\]  |
 | Filter.StatusTerugmelding<br>*String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.* | \[0..1\]  |
 | Filter.Objectidentificatie<br>*String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.* | \[0..1\]  |
 
-[^7]: *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
+<p class="note">
+<sup>4</sup> *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
 geldt dat **de laatste annotatie** is toegevoegd tussen
 VanafTijdstempelWijziging en TotEnMetTijdstempelWijziging
+</p>
 
 ### StatusoverzichtResponse
 
@@ -399,7 +401,7 @@ Planningsverwachting en BehandelendeBronhouder.
 | Bijlageverwijzing . **Annotatiebasis**                  |           |
 | Bijlageverwijzing . Bestandsnaam<br>*De naam van het bestand.* | \[1..1\]  |
 | Bijlageverwijzing . MIMEType<br>*Het MIME type van de bijlage.* | \[1..1\]  |
-| Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.[^2] | \[1..1\]  |
+| Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.<sup>5</sup> | \[1..1\]  |
 | Bijlageverwijzing . Beschrijving<br>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie. | \[0..1\]  |
 |                                                         |           |
 | **Annotatie . Planningsverwachting**<br>*Verwachte termijn voor behandeling, wordt alleen gebruikt door BRP en komt dan slechts eenmaal voor.* | \[0..\*\] |
@@ -411,7 +413,9 @@ Planningsverwachting en BehandelendeBronhouder.
 | BehandelendeBronhouder . **Annotatiebasis**             |           |
 | BehandelendeBronhouder . Bronhouder<br>*De bronhouder die de terugmelding momenteel in behandeling heeft.* | \[1..1\]  |
 
-[^2]: Dit veld wordt bij een bericht 'DetailsTerugmeldingResponse' leeg gelaten
+<p class="note">
+<sup>5</sup> Dit veld wordt bij een bericht 'DetailsTerugmeldingResponse' leeg gelaten
+</p>
 
 ## Echo
 

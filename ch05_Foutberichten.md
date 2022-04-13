@@ -61,13 +61,15 @@ Digikoppeling-foutcode verstuurd worden.
 
 Synchrone fouten voor Digikoppeling-WUS-berichten worden verstuurd als
 SOAP Fault zoals dit is voorgesteld voor de berichtenstandaard van het
-stelsel.[^4] SOAP Faults worden doorgaans door de Digikoppeling-adapter
+stelsel.<sup>6</sup> SOAP Faults worden doorgaans door de Digikoppeling-adapter
 doorgestuurd naar de achterliggende applicatie. Dit koppelvlak gaat er
 vanuit dat dit ook gebeurt voor de fouten die hier beschreven worden. De
 foutafhandeling dient in de terugmeldapplicatie plaats te vinden. Binnen
 de SOAP Fault wordt een aantal velden onderkend te weten:
 
-[^4]: Zie voorstel ["foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"](https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab)
+<p class="note">
+<sup>6</sup> Zie voorstel ["foutafhandeling synchrone berichten" van de "gemeenschappelijke afspraken berichtstandaarden"](https://digistandaarden.pleio.nl/groups/profile/24027452/gemeenschappelijke-afspraken-berichtstandaarden-gab)
+</p>
 
 |  |  |
 |---------------------------------------------------------|           |
@@ -78,7 +80,7 @@ de SOAP Fault wordt een aantal velden onderkend te weten:
 | opgebouwd uit de elementen                              |           |
 | \<Defaultwaarde\>.\<Code\>.\<OmschrijvingKort\> :*      |           |
 |                                                         |           |
-| Defaultwaarde<br>*Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.*[^6] *Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.* |           |
+| Defaultwaarde<br>*Bevat één van de defaultwaarden VersionMismatch, MustUnderstand, Client en Server.*<sup>7</sup> *Voor Digimeldingpraktijk zijn alleen Client- of Server-waarden relevant om aan te geven wat de aard van de fout is.* |           |
 |                                                         |           |
 | Code\                                                   |           |
 | *De specifieke foutcode die hoort bij de technische     |           |
@@ -125,7 +127,9 @@ de SOAP Fault wordt een aantal velden onderkend te weten:
 +---------------------------------------------------------+-----------+
 | faultdetail<br>*Volledig vrij veld om nadere toelichting op de fout te geven, kan gebruikt worden om bijv. achterliggende applicatiefoutmeldingen mee te geven (xs:any).* | \[0..\*\] |
 
-[^6]: Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1 voor uitleg
+<p class="note">
+<sup>7</sup> Zie <http://www.w3.org/TR/2000/NOTE-SOAP-20000508> sectie 4.4.1 voor uitleg
+</p>
 
 Voorbeeld:
 

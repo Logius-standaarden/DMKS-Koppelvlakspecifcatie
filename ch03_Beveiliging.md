@@ -82,13 +82,16 @@ hoeft niets meegegeven te worden in DMKS-berichten.
 ### Protocollen
 
 Bij synchrone communicatie wordt gebruik gemaakt van Digikoppeling WUS
-volgens het '2W-be'-profiel[^2] met ondersteuning voor MTOM voor
+volgens het '2W-be'-profiel<sup>2<sup> met ondersteuning voor MTOM voor
 efficiënt transport van attachments.
-
-[^2]: Best Effort, beveiligd met tweezijdige TLS
 
 Indien een basisregistratie verzoekt om een authenticatie van de
 terugmeldende organisatie wordt bij synchrone communicatie gebruikt
-gemaakt van WUS Profiel Digikoppeling 2W-be-S[^3].
+gemaakt van WUS Profiel Digikoppeling 2W-be-S<sup>3</sup>.
 
-[^3]: Best Effort, beveiligd met tweezijdige TLS en gesigneerde berichten
+<p class="note">
+<sup>2</sup> Best Effort, beveiligd met tweezijdige TLS
+</p>
+<p class="note">
+<sup>3</sup> Best Effort, beveiligd met tweezijdige TLS en gesigneerde berichten
+</p>
