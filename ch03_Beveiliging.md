@@ -82,7 +82,7 @@ hoeft niets meegegeven te worden in DMKS-berichten.
 ### Protocollen
 
 Bij synchrone communicatie wordt gebruik gemaakt van Digikoppeling WUS
-volgens het '2W-be'-profiel<sup>2<sup> met ondersteuning voor MTOM voor
+volgens het '2W-be'-profiel<sup>2</sup> met ondersteuning voor MTOM voor
 efficiënt transport van attachments.
 
 Indien een basisregistratie verzoekt om een authenticatie van de

@@ -106,7 +106,7 @@ als volgt:
 |--------------------------------|-------------------------|-----------|
 | **Annotatie.Terugmelding**   |                         | \[1..1\]  |
 | Terugmelding.**Annotatiebasis** |                      |           |
-| Terugmelding.Bronverwijzingen                   | Bronverwijzingen bestaande uit één of meerdere bronverwijzing*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld. | \[1..1\] |
+| Terugmelding.Bronverwijzingen   | Bronverwijzingen bestaande uit één of meerdere bronverwijzing*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld. | \[1..1\] |
 | Terugmelding.Bronverwijzingen. Bronverwijzing   | Bestaande uit een URI en een selectieverwijzing naar het basisregistratie-element waarop wordt teruggemeld. Dit zijn er meerdere, maar in de huidige praktijk is dit er altijd precies één. | \[1..\*\] |
 | Terugmelding.Bronverwijzingen. Bronverwijzing.Uri | Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN). | \[1..1\] |
 | Terugmelding.Bronverwijzingen. Bronverwijzing.Selectie | Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming). | \[0..\*\] |
@@ -194,12 +194,12 @@ een tijdstempel. Het is een zogeheten functionele acknowledgement wat
 betekent dat de achterliggende (TMV-)applicatie het vraagbericht in
 goede orde ontvangen heeft.
 
-| **Berichttype:** AnnotatieToevoegenResponse              |          |
-|----------------------------------------------------------|----------|
-| **Elementen/attributen**                                 |          |
-| AnnotatieToevoegenResponse                               |          |
-| AnnotatieToevoegenResponse . Tijdstempel<br>*Tijd waarop antwoord verstuurd is.* | \[1..1\] |
-| AnnotatieToevoegenResponse . AnnotatieVerwijzing<br>*UUID van de toegevoegde annotatie waar het antwoord betrekking op heeft.* | \[1..1\] |
+| **Berichttype:** AnnotatieToevoegenResponse      |           |          |
+|--------------------------------------------------|-----------|----------|
+| **Elementen/attributen**                         |           |          |
+| AnnotatieToevoegenResponse                       |           |          |
+| AnnotatieToevoegenResponse . Tijdstempel         | *Tijd waarop antwoord verstuurd is.* | \[1..1\] |
+| AnnotatieToevoegenResponse . AnnotatieVerwijzing | *UUID van de toegevoegde annotatie waar het antwoord betrekking op heeft.* | \[1..1\] |
 
 ## Status bevragen
 
@@ -251,21 +251,21 @@ terugmeldingen. Dit is enigszins bewerkelijk aangezien iedere
 basisregistratie zijn eigen statussen mag definiëren. In de
 berichtenschema's is daarom slechts vastgelegd dat dit een string is.
 
-| **Berichttype**: StatusoverzichtRequest                 |           |
-|---------------------------------------------------------|-----------|
-| **Elementen/attributen**                                |           |
-| OinVragendeOrganisatie>br>*OIN van de vragende organisatie.*  | \[1..1\]  |
-| OinBasisregistratie<br>*Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\]  |
-| Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\]  |
-| **Filter**                                              | \[0..1\]  |
-| Filter.MeldingskenmerkenLijst<br>*(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.* | \[0..1\]  |
-| Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement | \[1..\*\] |
-| Filter.VanafTijdstempelIndienen<br>*Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.*   | \[0..1\]  |
-| Filter.TotEnMetTijdstempelIndienen<br>  *Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.* | \[0..1\]  |
-| Filter.VanafTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond<sup>4</sup>.* | \[0..1\]  |
-| Filter.TotEnMetTijdstempelWijziging<br>*Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond<sup>4</sup>.* | \[0..1\]  |
-| Filter.StatusTerugmelding<br>*String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.* | \[0..1\]  |
-| Filter.Objectidentificatie<br>*String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.* | \[0..1\]  |
+| **Berichttype**: StatusoverzichtRequest |                      |           |
+|-----------------------------------------|----------------------|-----------|
+| **Elementen/attributen** |                                     |           |
+| OinVragendeOrganisatie   | *OIN van de vragende organisatie.*  | \[1..1\]  |
+| OinBasisregistratie      | *Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\]  |
+| Registratie              | Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\]  |
+| **Filter**               |                                     | \[0..1\]  |
+| Filter.MeldingskenmerkenLijst       | *(Lijst met)Eigen kenmerk(en) terugmeldende organisatie.* | \[0..1\]  |
+| Filter.MeldingskenmerkenLijst.MeldinggkenmerkLijstElement |    | \[1..\*\] |
+| Filter.VanafTijdstempelIndienen     | *Filtert resultaten die zijn ingediend voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond.*   | \[0..1\]  |
+| Filter.TotEnMetTijdstempelIndienen  | *Filtert resultaten die zijn ingediend na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond.* | \[0..1\]  |
+| Filter.VanafTijdstempelWijziging    | *Filtert resultaten die zijn gewijzigd voor dit tijdstempel weg. Resultaten op de tijdstempel of daarna worden getoond<sup>4</sup>.* | \[0..1\]  |
+| Filter.TotEnMetTijdstempelWijziging | *Filtert resultaten die zijn gewijzigd na dit tijdstempel weg. Resultaten op de tijdstempel of daarvoor worden getoond<sup>4</sup>.* | \[0..1\]  |
+| Filter.StatusTerugmelding           | *String met daarin een status behorende bij de basisregistratie waarvan het overzicht gevraagd wordt.* | \[0..1\]  |
+| Filter.Objectidentificatie          | *String met daarin een objectidentificatie behorende bij de basisregistratie waarvan het overzicht gevraagd wordt. Hiermee kunnen terugmeldingen ook op basis van KvK-nummer, BSN-nummer, BAG-id, etc teruggevonden worden.* | \[0..1\]  |
 
 <p class="note">
 <sup>4</sup> *Het resultaat* betreft terugmeldingen (annotatiebomen) waarvoor
@@ -289,18 +289,18 @@ deze foutsituaties op zijn plaats omdat dit geen kritieke fouten zijn en
 het aan de afnemer is om te bepalen of hier actie op moet worden
 ondernomen.
 
-| **Berichttype**: StatusoverzichtResponse                |           |
-|---------------------------------------------------------|-----------|
-| **Elementen/attributen**                                |           |
-| **AnnotatieLijst**                                      | \[1..\*\] |
-| Annotatie                                               | \[0..\*\] |
-| Annotatie . Tijdstempel<br>*Datum/tijd waarop de annotatie heeft plaatsgevonden* | \[1..1\]  |
-| Annotatie . Uuid<br>*Unieke verwijzing naar de root annotatie van een annotatieboom.* | \[1..1\]  |
-| Annotatie . Meldingskenmerk<br>*Eigen kenmerk terugmeldende organisatie.* | \[1..1\]  |
-| Annotatie . Bronverwijzing                              | \[1..1\]  |
-| Annotatie . Bronverwijzing . Uri<br>*Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).* | \[1..1\]  |
-| Annotatie . Bronverwijzing . Selectie<br>*Object waarop is teruggemeld.* | \[0..1\]  |
-| Annotatie . Annotatiestatus<br>*Laatste status annotatie van de terugmelding.* | \[1..1\]  |
+| **Berichttype**: StatusoverzichtResponse |                |           |
+|------------------------------------------|----------------|-----------|
+| **Elementen/attributen**    |                             |           |
+| **AnnotatieLijst**          |                             | \[1..\*\] |
+| Annotatie                   |                             | \[0..\*\] |
+| Annotatie . Tijdstempel     | *Datum/tijd waarop de annotatie heeft plaatsgevonden* | \[1..1\]  |
+| Annotatie . Uuid            | *Unieke verwijzing naar de root annotatie van een annotatieboom.* | \[1..1\]  |
+| Annotatie . Meldingskenmerk | *Eigen kenmerk terugmeldende organisatie.* | \[1..1\]  |
+| Annotatie . Bronverwijzing  |                             | \[1..1\]  |
+| Annotatie . Bronverwijzing . Uri | *Een combinatie van OIN en de unieke sleutel van het brongegeven zodat een unieke referentie ontstaat naar het brongegeven (bijv. OIN en HRN).* | \[1..1\]  |
+| Annotatie . Bronverwijzing . Selectie | *Object waarop is teruggemeld.* | \[0..1\]  |
+| Annotatie . Annotatiestatus | *Laatste status annotatie van de terugmelding.* | \[1..1\]  |
 
 ### DetailsTerugmeldingRequest
 
@@ -324,13 +324,13 @@ Volgens het protocol kan ook een individuele leaf annotatie of een
 deelboom worden opgevraagd. Dit is nu in theorie mogelijk maar wordt in
 de praktijk niet toegepast en is niet getest.
 
-| **Berichttype**: DetailsTerugmeldingRequest              |          |
-|----------------------------------------------------------|----------|
-| **Elementen/attributen**                                 |          |
-| OinVragendeOrganisatie<br>*Identificatie d.m.v. OIN-vragende organisatie.* | \[1..1\] |
-| OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\] |
-| Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\] |
-| Uuid<br>*UUID van root annotatie.*                       | \[1..1\] |
+| **Berichttype**: DetailsTerugmeldingRequest |              |          |
+|---------------------------------------------|--------------|----------|
+| **Elementen/attributen**                    |              |          |
+| OinVragendeOrganisatie      | *Identificatie d.m.v. OIN-vragende organisatie.* | \[1..1\] |
+| OinBasisregistratie         | Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\] |
+| Registratie                 | Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\] |
+| Uuid                        | *UUID van root annotatie.*                       | \[1..1\] |
 
 ### DetailsTerugmeldingResponse
 
@@ -359,59 +359,54 @@ volgende soorten annotaties bevatten: Terugmelding, Annotatiestatus,
 Referentiekenmerk, Contactinformatie, Bijlageverwijzing,
 Planningsverwachting en BehandelendeBronhouder.
 
-| **Berichttype**: DetailsTerugmeldingResponse            |           |
-|---------------------------------------------------------|-----------|
-| **Elementen/attributen**                                |           |
-| **AnnotatieBoom**                                       | \[1..1\]  |
-|                                                         |           |
-| > *De container die de verzameling annotaties bevat die |           |
-| > ofwel het gevraagde UUID als kenmerk hebben of daar   |           |
-| > middels een annotatieverwijzing naar verwijzen.*      |           |
-|                                                         |           |
-| **Annotatie . Terugmelding**<br>*De terugmelding (de annotatie die uiteindelijk de root annotatie zal worden)* | \[1..1\]  |
-| Terugmelding . **Annotatiebasis**                       |           |
-| Terugmelding . Bronverwijzingen<br>*Bronverwijzingen bestaande uit één of meerdere bronverwijzing(en)*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.* | \[1..1\]  |
-| Bronverwijzingen . Bronverwijzing<br>*Bestaande uit een URI en een selectieverwijzing naar het basisregistratie element waarop wordt teruggemeld. Dit mogen er meerdere zijn, maar in de huidige praktijk is dit er altijd precies één.*  | \[1..\*\] |
-| Bronverwijzing.Uri<br>*De URI die de combinatie van basisregistratie en sleutel (bijvoorbeeld BSN of HRN) uniek identificeert.* | \[1..1\]  |
-| Bronverwijzing.Selectie<br>  *Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).* | \[0..\*\] |
-| Terugmelding . Attributenset<br>*De set van attributen die daadwerkelijk gewijzigd dienen te worden.* | \[1..1\]  |
-| Attributenset . Attribuut<br>*Eén of meerdere attributen die gewijzigd dienen te worden.* | \[1..\*\] |
-| Attribuut . Uri<br>De unieke aanduiding van het attribuut | \[1..1\]  |
-| Attribuut . BetwijfeldeWaarde<br>*De bestaande waarde in de basisregistratie.* | \[0..1\]  |
-| Attribuut . VoorgesteldeWaarde<br>*De voorgestelde nieuwe waarde.* | \[0..1\]  |
-| Terugmelding . Peilmoment<br>*De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.* | \[0..1\]  |
-|                                                         |           |
-| **Annotatie . Annotatiestatus**<br>*Status van de terugmelding, de status met de meest recente datum GeannoteerdOp is de geldige status.* | \[1..\*\] |
-| Annotatiestatus . **Annotatiebasis**                    |           |
-| Annotatiestatus . Status<br>*Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties. Het is toegestaan om in de eigen catalogus afwijkende statussen op te  nemen) | \[1..1\]  |
-|                                                         |           |
-| **Annotatie . Referentiekenmerk**<br>*Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).* | \[1 \*\]  |
-| **Referentiekenmerk.Annotatiebasis**                    |           |
-| Referentiekenmerk.Kenmerk<br>*Eigen kenmerk terugmeldende organisatie.* | \[1..1\]  |
-|                                                         |           |
-| **Annotatie . Contactinformatie**<br>*Contactgegevens.* | \[1 \*\]  |
-| Contactinformatie . \@ContactType<br>*kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\]  |
-| **Contactinformatie . Annotatiebasis**                  |           |
-| Contactinformatie . Naam                                | \[1..1\]  |
-| Contactinformatie . Telefoon                            | \[0..1\]  |
-| Contactinformatie . Email                               | \[1..1\]  |
-| Contactinformatie . Afdeling                            | \[0..1\]  |
-|                                                         |           |
-| **Annotatie . Bijlageverwijzing**<br>*Metainformatie over bijlagen.*<br>*Wordt in de praktijk niet ondersteund door BRP, HR ondersteunt er maximaal 5.* | \[0..\*\] |
-| Bijlageverwijzing . **Annotatiebasis**                  |           |
-| Bijlageverwijzing . Bestandsnaam<br>*De naam van het bestand.* | \[1..1\]  |
-| Bijlageverwijzing . MIMEType<br>*Het MIME type van de bijlage.* | \[1..1\]  |
-| Bijlageverwijzing . BijlageData<br>*Het bestand zelf in Base64-binary encoding.<sup>5</sup> | \[1..1\]  |
-| Bijlageverwijzing . Beschrijving<br>*Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie. | \[0..1\]  |
-|                                                         |           |
-| **Annotatie . Planningsverwachting**<br>*Verwachte termijn voor behandeling, wordt alleen gebruikt door BRP en komt dan slechts eenmaal voor.* | \[0..\*\] |
-| Planningsverwachting . **Annotatiebasis**               |           |
-| Planningsverwachting . MijlpaalAanduiding<br>*Beschrijving van de planningsverwachting.* | \[0..1\]  |
-| Planningsverwachting . MijlpaalTijdstempel<br>*Datum waarop de planning gereed is.*      | \[0..1\]  |
-|                                                         |           |
-| **Annotatie . BehandelendeBronhouder**<br>*Behandelende bronhouder, huidige behandelaar is leaf annotatie met meest recente tijdstempel.* | \[0 \*\]  |
-| BehandelendeBronhouder . **Annotatiebasis**             |           |
-| BehandelendeBronhouder . Bronhouder<br>*De bronhouder die de terugmelding momenteel in behandeling heeft.* | \[1..1\]  |
+| **Berichttype**: DetailsTerugmeldingResponse |            |           |
+|----------------------------------------------|------------|-----------|
+| **Elementen/attributen**                     |            |           |
+| **AnnotatieBoom**          | *De container die de verzameling annotaties bevat die ofwel het gevraagde UUID als kenmerk hebben of daar middels een annotatieverwijzing naar verwijzen.* | \[1..1\]  |
+| **Annotatie.Terugmelding** | *De terugmelding (de annotatie die uiteindelijk de root annotatie zal worden)* | \[1..1\]  |
+| Terugmelding.**Annotatiebasis**              |            |           |
+| Terugmelding.Bronverwijzingen                | *Bronverwijzingen bestaande uit één of meerdere bronverwijzing(en)*<br>*Lijst van verwijzingen met basisregistratie elementen waarop wordt teruggemeld.* | \[1..1\]  |
+| Bronverwijzingen.Bronverwijzing              | *Bestaande uit een URI en een selectieverwijzing naar het basisregistratie element waarop wordt teruggemeld. Dit mogen er meerdere zijn, maar in de huidige praktijk is dit er altijd precies één.*  | \[1..\*\] |
+| Bronverwijzing.Uri                           | *De URI die de combinatie van basisregistratie en sleutel (bijvoorbeeld BSN of HRN) uniek identificeert.* | \[1..1\]  |
+| Bronverwijzing.Selectie                      | *Selectie van een element binnen de structuur die door de URI uniek geïdentificeerd wordt (bijvoorbeeld onderneming).* | \[0..\*\] |
+| Terugmelding.Attributenset | *De set van attributen die daadwerkelijk gewijzigd dienen te worden.* | \[1..1\]  |
+| Attributenset.Attribuut    | *Eén of meerdere attributen die gewijzigd dienen te worden.* | \[1..\*\] |
+| Attribuut.Uri              | De unieke aanduiding van het attribuut | \[1..1\]  |
+| Attribuut.BetwijfeldeWaarde  | *De bestaande waarde in de basisregistratie.* | \[0..1\]  |
+| Attribuut.VoorgesteldeWaarde | *De voorgestelde nieuwe waarde.* | \[0..1\]  |
+| Terugmelding.Peilmoment      | *De datum waarop de betwijfelde waarde geldig is en de voorgestelde waarde geldig zou moeten zijn.* | \[0..1\]  |
+|                                               |           |           |
+| **Annotatie.Annotatiestatus** | *Status van de terugmelding, de status met de meest recente datum GeannoteerdOp is de geldige status.* | \[1..\*\] |
+| Annotatiestatus.**Annotatiebasis**            |           |           |
+| Annotatiestatus.Status                        | *Zie bijlage B voor lijst met geadviseerde statussen voor aangesloten basisregistraties. Het is toegestaan om in de eigen catalogus afwijkende statussen op te  nemen) | \[1..1\]  |
+|                                               |           |           |
+| **Annotatie . Referentiekenmerk**  | *Eigen kenmerk terugmeldende organisatie (het mogen er meer zijn, in de huidige praktijk altijd precies één).* | \[1 \*\]  |
+| **Referentiekenmerk.Annotatiebasis**          |           |           |
+| Referentiekenmerk.Kenmerk          | *Eigen kenmerk terugmeldende organisatie.* | \[1..1\]  |
+|                                               |           |           |
+| **Annotatie.Contactinformatie**    | *Contactgegevens.* | \[1 \*\]  |
+| Contactinformatie.\@ContactType    | *kan alleen de waarden \'Melder\' of \'Behandelaar\' hebben* | \[1..1\]  |
+| **Contactinformatie.Annotatiebasis**   |                  |           |
+| Contactinformatie.Naam                 |                  | \[1..1\]  |
+| Contactinformatie.Telefoon             |                  | \[0..1\]  |
+| Contactinformatie.Email                |                  | \[1..1\]  |
+| Contactinformatie.Afdeling             |                  | \[0..1\]  |
+|                                        |                  |           |
+| **Annotatie . Bijlageverwijzing**      | *Metainformatie over bijlagen.*<br>*Wordt in de praktijk niet ondersteund door BRP, HR ondersteunt er maximaal 5.* | \[0..\*\] |
+| Bijlageverwijzing . **Annotatiebasis** |                  |           |
+| Bijlageverwijzing . Bestandsnaam       | *De naam van het bestand.* | \[1..1\]  |
+| Bijlageverwijzing . MIMEType           | *Het MIME type van de bijlage.* | \[1..1\]  |
+| Bijlageverwijzing . BijlageData        | *Het bestand zelf in Base64-binary encoding.<sup>5</sup> | \[1..1\]  |
+| Bijlageverwijzing . Beschrijving       | *Beschrijving van de bijlage. De bijlage zelf wordt nooit mee teruggeleverd bij het bevragen van een terugmelding/annotatie. | \[0..1\]  |
+|                                        |                  |           |
+| **Annotatie . Planningsverwachting**   | *Verwachte termijn voor behandeling, wordt alleen gebruikt door BRP en komt dan slechts eenmaal voor.* | \[0..\*\] |
+| Planningsverwachting . **Annotatiebasis**  |               |           |
+| Planningsverwachting . MijlpaalAanduiding  | *Beschrijving van de planningsverwachting.* | \[0..1\]  |
+| Planningsverwachting . MijlpaalTijdstempel | *Datum waarop de planning gereed is.*      | \[0..1\]  |
+|                                            |               |           |
+| **Annotatie . BehandelendeBronhouder**     | *Behandelende bronhouder, huidige behandelaar is leaf annotatie met meest recente tijdstempel.* | \[0 \*\]  |
+| BehandelendeBronhouder . **Annotatiebasis** |              |           |
+| BehandelendeBronhouder . Bronhouder         | *De bronhouder die de terugmelding momenteel in behandeling heeft.* | \[1..1\]  |
 
 <p class="note">
 <sup>5</sup> Dit veld wordt bij een bericht 'DetailsTerugmeldingResponse' leeg gelaten
@@ -442,18 +437,17 @@ is.
 
 De structuur van het echoverzoek is als volgt:
 
-| **Berichttype: EchoRequest**                             |          |
-|----------------------------------------------------------|----------|
-| EchoRequest . OinBasisregistratie<br>*Het OIN van de basisregistratie waar het echoverzoek    |          |
-| naar toe moet* | \[1..1\] |
-| EchoRequest .OinBasisregistratie<br>Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\] |
-| EchoRequest . Registratie<br>Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\] |
-| EchoRequest . Echo<br>De string die geëchood moet worden | \[1..1\] |
+| **Berichttype: EchoRequest**            |               |          |
+|-----------------------------------------|---------------|----------|
+| EchoRequest.OinBasisregistratie         | *Het OIN van de basisregistratie waar het echoverzoek naar toe moet* | \[1..1\] |
+| EchoRequest.OinBasisregistratie         | Het OIN van de houder van een landelijke voorziening van de basisregistratie | \[1..1\] |
+| EchoRequest.Registratie                 | Code (maximaal 3 letterig) waarmee de basisregistratie wordt aangeduid wanneer de houder van een landelijke voorziening meer dan 1 basisregistratie beheert (bv BRT, BGT). | \[0..1\] |
+| EchoRequest.Echo                        | De string die geëchood moet worden | \[1..1\] |
 
 ### EchoResponse
 
 De structuur van het echo-antwoord is als volgt:
 
-| **Berichttype: EchoResponse** |          |
-|-------------------------------|----------|
-| EchoResponse . Echo<br>De teruggestuurde echo string | \[1..1\] |
+| **Berichttype: EchoResponse** |        |      |
+|-----------------------------|----------|------|
+| EchoResponse.Echo           | De teruggestuurde echo string | \[1..1\] |
