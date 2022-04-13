@@ -35,17 +35,17 @@ Figuur 2. Authenticatie en autorisatie bij Digimelding
 
 Indien in de keten de terugmelder met eHerkenning geauthenticeerd wordt,
 willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
-dienen de eHerkenningsgegevens ( 'OIN'[^1], 'vestigingsnummer' en
+dienen de eHerkenningsgegevens ( ['OIN'](#noot-eHerkenning), 'vestigingsnummer' en
 'pseudoID' van de natuurlijk persoon(ontvangen via een SAML-token) in
 het DMKS-bericht doorgegeven te worden. In deze gevallen is de
 autorisatie voor de TMV-applicatie geregeld middels eHerkenning op
 persoonsniveau.
 
-[^1]: De eHerkenningmiddelenleverancier stuurt een SAML token terug met daarin
+~~[^1]: De eHerkenningmiddelenleverancier stuurt een SAML token terug met daarin
 o.a. het 'OIN' zoals in de eHerkenningskoppelvlakstandaard is
 gespecificeerd. Dit 'OIN' met een prefix 00000003 is niet gelijk aan
 het door Logius uitgegeven OIN zoals in het OIN-register is
-opgenomen.
+opgenomen.~~
 
 Indien in de keten de terugmelder met SSOn-Rijk geauthenticeerd wordt,
 willen basisregistraties dit altijd gebruiken als autorisatiemiddel en
