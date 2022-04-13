@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Gegenereerd door Microsoft Visio, SVG Export Digimelding.svg Page-1 -->
+<!-- Gegenereerd door Microsoft Visio, SVG Export Digimelding.svg Pagina-1 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
-		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="8.26772in" height="11.6929in"
-		viewBox="0 0 595.276 841.89" xml:space="preserve" color-interpolation-filters="sRGB" class="st10">
-	<v:documentProperties v:langID="1043" v:metric="true" v:viewMarkup="false">
-		<v:userDefs>
-			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
-		</v:userDefs>
-	</v:documentProperties>
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.21642in" height="3.10519in"
+		viewBox="0 0 375.582 223.574" xml:space="preserve" color-interpolation-filters="sRGB" class="st10">
+	<v:documentProperties v:langID="1043" v:metric="true" v:viewMarkup="false"/>
 
 	<style type="text/css">
 	<![CDATA[
@@ -47,7 +43,7 @@
 				v:shadowOffsetY="-8.50394"/>
 		<v:layer v:name="Stroomdiagram" v:index="0"/>
 		<v:layer v:name="Verbindingslijn" v:index="1"/>
-		<g id="shape1-1" v:mID="1" v:groupContext="shape" v:layerMember="0" transform="translate(70.8661,-595.276)">
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" v:layerMember="0" transform="translate(0.12,-188.021)">
 			<title>Proces</title>
 			<desc>Geen</desc>
 			<v:custProps>
@@ -74,10 +70,10 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st1"/>
-			<text x="16.93" y="827.77" class="st2" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Geen</text>		</g>
-		<g id="shape2-4" v:mID="2" v:groupContext="shape" v:layerMember="0" transform="translate(172.317,-595.276)">
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st1"/>
+			<text x="16.93" y="209.46" class="st2" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Geen</text>		</g>
+		<g id="shape2-4" v:mID="2" v:groupContext="shape" v:layerMember="0" transform="translate(101.57,-188.021)">
 			<title>Proces.2</title>
 			<desc>Gemeld</desc>
 			<v:custProps>
@@ -104,10 +100,10 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st1"/>
-			<text x="10.45" y="827.77" class="st3" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Gemeld</text>		</g>
-		<g id="shape3-7" v:mID="3" v:groupContext="shape" v:layerMember="0" transform="translate(273.767,-595.276)">
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st1"/>
+			<text x="10.45" y="209.46" class="st3" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Gemeld</text>		</g>
+		<g id="shape3-7" v:mID="3" v:groupContext="shape" v:layerMember="0" transform="translate(203.021,-188.021)">
 			<title>Proces.3</title>
 			<desc>In behandeling</desc>
 			<v:custProps>
@@ -134,11 +130,11 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st1"/>
-			<text x="25.64" y="821.17" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>In <tspan x="4.37"
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st1"/>
+			<text x="25.64" y="202.86" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>In <tspan x="4.37"
 						dy="1.2em" class="st5">behandeling</tspan></text>		</g>
-		<g id="shape4-11" v:mID="4" v:groupContext="shape" v:layerMember="0" transform="translate(273.767,-538.583)">
+		<g id="shape4-11" v:mID="4" v:groupContext="shape" v:layerMember="0" transform="translate(203.021,-131.328)">
 			<title>Proces.4</title>
 			<desc>Ingetrokken</desc>
 			<v:custProps>
@@ -165,10 +161,10 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st6"/>
-			<text x="5.08" y="827.17" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Ingetrokken</text>		</g>
-		<g id="shape5-14" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(273.767,-481.89)">
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st6"/>
+			<text x="5.08" y="208.86" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Ingetrokken</text>		</g>
+		<g id="shape5-14" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(203.021,-74.6348)">
 			<title>Proces.5</title>
 			<desc>Onvoldoende informatie</desc>
 			<v:custProps>
@@ -195,11 +191,11 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st6"/>
-			<text x="2.05" y="821.17" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Onvoldoende <tspan
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st6"/>
+			<text x="2.05" y="202.86" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Onvoldoende <tspan
 						x="8.15" dy="1.2em" class="st5">informatie</tspan></text>		</g>
-		<g id="shape6-18" v:mID="6" v:groupContext="shape" v:layerMember="0" transform="translate(273.767,-425.197)">
+		<g id="shape6-18" v:mID="6" v:groupContext="shape" v:layerMember="0" transform="translate(203.021,-17.9419)">
 			<title>Proces.6</title>
 			<desc>Verkeerde bronhouder</desc>
 			<v:custProps>
@@ -226,11 +222,11 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st1"/>
-			<text x="8.35" y="821.17" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Verkeerde <tspan
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st1"/>
+			<text x="8.35" y="202.86" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Verkeerde <tspan
 						x="5.15" dy="1.2em" class="st5">bronhouder</tspan></text>		</g>
-		<g id="shape7-22" v:mID="7" v:groupContext="shape" v:layerMember="0" transform="translate(387.153,-425.197)">
+		<g id="shape7-22" v:mID="7" v:groupContext="shape" v:layerMember="0" transform="translate(316.407,-17.9419)">
 			<title>Proces.7</title>
 			<desc>Afgehandeld</desc>
 			<v:custProps>
@@ -257,18 +253,18 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st6"/>
-			<text x="3.73" y="827.17" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Afgehandeld</text>		</g>
-		<g id="shape8-25" v:mID="8" v:groupContext="shape" v:layerMember="1" transform="translate(129.921,-605.906)">
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st6"/>
+			<text x="3.73" y="208.86" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Afgehandeld</text>		</g>
+		<g id="shape8-25" v:mID="8" v:groupContext="shape" v:layerMember="1" transform="translate(59.1751,-198.651)">
 			<title>Dynamische verbindingslijn</title>
-			<path d="M0 834.8 L35.86 834.8" class="st7"/>
+			<path d="M0 216.49 L35.86 216.49" class="st7"/>
 		</g>
-		<g id="shape9-31" v:mID="9" v:groupContext="shape" v:layerMember="1" transform="translate(231.372,-605.906)">
+		<g id="shape9-31" v:mID="9" v:groupContext="shape" v:layerMember="1" transform="translate(160.626,-198.651)">
 			<title>Dynamische verbindingslijn.9</title>
-			<path d="M0 834.8 L35.86 834.8" class="st7"/>
+			<path d="M0 216.49 L35.86 216.49" class="st7"/>
 		</g>
-		<g id="shape10-36" v:mID="10" v:groupContext="shape" v:layerMember="0" transform="translate(387.153,-595.276)">
+		<g id="shape10-36" v:mID="10" v:groupContext="shape" v:layerMember="0" transform="translate(316.407,-188.021)">
 			<title>Proces.10</title>
 			<desc>Ingepland</desc>
 			<v:custProps>
@@ -295,51 +291,51 @@
 				<v:ud v:nameU="ResizeTxtHeight" v:prompt="" v:val="VT0(0.59055118110236):24"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
-			<v:textRect cx="29.5276" cy="824.173" width="59.06" height="35.4331"/>
-			<rect x="0" y="806.457" width="59.0551" height="35.4331" class="st1"/>
-			<text x="9.38" y="827.17" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Ingepland</text>		</g>
-		<g id="shape11-39" v:mID="11" v:groupContext="shape" v:layerMember="1" transform="translate(231.372,-612.992)">
+			<v:textRect cx="29.5276" cy="205.857" width="59.06" height="35.4331"/>
+			<rect x="0" y="188.141" width="59.0551" height="35.4331" class="st1"/>
+			<text x="9.38" y="208.86" class="st4" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>Ingepland</text>		</g>
+		<g id="shape11-39" v:mID="11" v:groupContext="shape" v:layerMember="1" transform="translate(160.626,-205.737)">
 			<title>Dynamische verbindingslijn.11</title>
-			<path d="M0 841.89 L33.83 841.89 L33.83 898.58 L35.86 898.58" class="st7"/>
+			<path d="M0 223.57 L33.83 223.57 L33.83 280.27 L35.86 280.27" class="st7"/>
 		</g>
-		<g id="shape12-44" v:mID="12" v:groupContext="shape" v:layerMember="1" transform="translate(231.372,-612.992)">
+		<g id="shape12-44" v:mID="12" v:groupContext="shape" v:layerMember="1" transform="translate(160.626,-205.737)">
 			<title>Dynamische verbindingslijn.12</title>
-			<path d="M0 841.89 L23 841.89 L23 955.28 L35.86 955.28" class="st7"/>
+			<path d="M0 223.57 L23 223.57 L23 336.96 L35.86 336.96" class="st7"/>
 		</g>
-		<g id="shape13-49" v:mID="13" v:groupContext="shape" v:layerMember="1" transform="translate(231.372,-612.992)">
+		<g id="shape13-49" v:mID="13" v:groupContext="shape" v:layerMember="1" transform="translate(160.626,-205.737)">
 			<title>Dynamische verbindingslijn.13</title>
-			<path d="M0 841.89 L10.63 841.89 L10.63 1011.97 L35.86 1011.97" class="st7"/>
+			<path d="M0 223.57 L10.63 223.57 L10.63 393.65 L35.86 393.65" class="st7"/>
 		</g>
-		<g id="shape14-54" v:mID="14" v:groupContext="shape" v:layerMember="1" transform="translate(296.208,-595.276)">
+		<g id="shape14-54" v:mID="14" v:groupContext="shape" v:layerMember="1" transform="translate(225.462,-188.021)">
 			<title>Dynamische verbindingslijn.14</title>
-			<path d="M7.09 841.89 L7.09 859.88" class="st9"/>
+			<path d="M7.09 223.57 L7.09 241.56" class="st9"/>
 		</g>
-		<g id="shape15-60" v:mID="15" v:groupContext="shape" v:layerMember="1" transform="translate(332.822,-612.992)">
+		<g id="shape15-60" v:mID="15" v:groupContext="shape" v:layerMember="1" transform="translate(262.076,-205.737)">
 			<title>Dynamische verbindingslijn.15</title>
-			<path d="M0 841.89 L35.68 841.89 L35.68 1011.97 L47.79 1011.97" class="st7"/>
+			<path d="M0 223.57 L35.68 223.57 L35.68 393.65 L47.79 393.65" class="st7"/>
 		</g>
-		<g id="shape16-65" v:mID="16" v:groupContext="shape" v:layerMember="1" transform="translate(332.822,-605.906)">
+		<g id="shape16-65" v:mID="16" v:groupContext="shape" v:layerMember="1" transform="translate(262.076,-198.651)">
 			<title>Dynamische verbindingslijn.16</title>
-			<path d="M0 834.8 L47.79 834.8" class="st7"/>
+			<path d="M0 216.49 L47.79 216.49" class="st7"/>
 		</g>
-		<g id="shape17-70" v:mID="17" v:groupContext="shape" v:layerMember="1" transform="translate(303.295,-425.197)">
+		<g id="shape17-70" v:mID="17" v:groupContext="shape" v:layerMember="1" transform="translate(232.549,-17.9419)">
 			<title>Dynamische verbindingslijn.17</title>
-			<path d="M0 841.89 L0 852.52 L-101.45 852.52 L-101.45 678.35" class="st7"/>
+			<path d="M0 223.57 L0 234.2 L-101.45 234.2 L-101.45 60.03" class="st7"/>
 		</g>
-		<g id="shape18-75" v:mID="18" v:groupContext="shape" v:layerMember="1" transform="translate(303.295,-425.197)">
+		<g id="shape18-75" v:mID="18" v:groupContext="shape" v:layerMember="1" transform="translate(232.549,-17.9419)">
 			<title>Dynamische verbindingslijn.18</title>
-			<path d="M0 841.89 L0 852.52 L49.54 852.52 L49.54 710.79 L32.8 710.79" class="st9"/>
+			<path d="M0 223.57 L0 234.2 L49.54 234.2 L49.54 92.47 L32.8 92.47" class="st9"/>
 		</g>
-		<g id="shape19-80" v:mID="19" v:groupContext="shape" v:layerMember="1" transform="translate(325.736,-435.827)">
+		<g id="shape19-80" v:mID="19" v:groupContext="shape" v:layerMember="1" transform="translate(254.989,-28.5718)">
 			<title>Dynamische verbindingslijn.19</title>
 		</g>
-		<g id="shape20-81" v:mID="20" v:groupContext="shape" v:layerMember="1" transform="translate(332.822,-442.913)">
+		<g id="shape20-81" v:mID="20" v:groupContext="shape" v:layerMember="1" transform="translate(262.076,-35.6584)">
 			<title>Dynamische verbindingslijn.20</title>
-			<path d="M0 841.89 L10.63 841.89 L10.63 813.54 L-29.53 813.54 L-29.53 817.63" class="st7"/>
+			<path d="M0 223.57 L10.63 223.57 L10.63 195.23 L-29.53 195.23 L-29.53 199.32" class="st7"/>
 		</g>
-		<g id="shape21-86" v:mID="21" v:groupContext="shape" v:layerMember="1" transform="translate(409.594,-595.276)">
+		<g id="shape21-86" v:mID="21" v:groupContext="shape" v:layerMember="1" transform="translate(338.848,-188.021)">
 			<title>Dynamische verbindingslijn.21</title>
-			<path d="M7.09 841.89 L7.09 970" class="st7"/>
+			<path d="M7.09 223.57 L7.09 351.68" class="st7"/>
 		</g>
 	</g>
 </svg>
