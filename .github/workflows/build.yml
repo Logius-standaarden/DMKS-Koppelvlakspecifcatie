@@ -76,4 +76,3 @@ jobs:
          git config user.email "api@logius.nl"
          git commit -m "new preview build"
          git push
- 
