@@ -28,7 +28,7 @@ var respecConfig = {
   subtitle: "Handreiking",
 
   // The specification's "short name", which is the name used in NL_Respec URLs
-  shortName: "digimelding-koppelvlak",
+  shortName: "koppelvlak",
 
   // A YYYY-MM-DD date. The publication date of the present document.
   // Als er geen publishDate is opgegeven, genereert ReSpec de dataum o.b.v. de laatste wijzigingen
@@ -117,7 +117,7 @@ var respecConfig = {
 
   // The specification's publish domain, which is used to publish the specification
   // the url in the header thisVersion is generated like `<conf.nl_organisationPublishURL>/<conf.pubDomain>/<specStatus>-<specType.toLowerCase()>-<conf.shortName>}-conf.publishDate>/`
-  pubDomain: "dk",
+  pubDomain: "digimelding",
 
   // Based on the example settings Respec will generate the following links in the header:
   // https://publicatie.centrumvoorstandaarden.nl/dk/ebms/
