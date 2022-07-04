@@ -110,19 +110,7 @@ var respecConfig = {
   //   },
   // ],
 
-  // You can use markdown to write ReSpec based documents.
-  // format: "markdown",
-  // <section data-format="markdown" data-include="<filename>.md"></section>
-
-
-  // The specification's publish domain, which is used to publish the specification
-  // the url in the header thisVersion is generated like `<conf.nl_organisationPublishURL>/<conf.pubDomain>/<specStatus>-<specType.toLowerCase()>-<conf.shortName>}-conf.publishDate>/`
   pubDomain: "digimelding",
-
-  // Based on the example settings Respec will generate the following links in the header:
-  // https://publicatie.centrumvoorstandaarden.nl/dk/ebms/
-  // https://{nl_organisationPublishURL}/{pubDomain}/{pubSubDomain}/
-  // pubSubDomain: "ebms",
 
   // this parameter will add the tag_name of the latest release to the document Title
   // only set this parameter when a release has been set
