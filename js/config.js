@@ -28,7 +28,7 @@ var respecConfig = {
   subtitle: "Handreiking",
 
   // The specification's "short name", which is the name used in NL_Respec URLs
-  shortName: "digimelding-koppelvlak",
+  shortName: "koppelvlak",
 
   // A YYYY-MM-DD date. The publication date of the present document.
   // Als er geen publishDate is opgegeven, genereert ReSpec de dataum o.b.v. de laatste wijzigingen
@@ -54,13 +54,14 @@ var respecConfig = {
 
   // An array of person objects describing the editors of the document
   // this can be simple or more elaborated
-  editors: [{
-    name: "Peter Haasnoot",
+  editors: [
+  {
+    name: "Edwin Wisse",
     url: "https://logius.nl/standaarden",
     company: "Logius",
   },
   {
-    name: "Edwin Wisse",
+    name: "Peter Haasnoot",
     url: "https://logius.nl/standaarden",
     company: "Logius",
   }
@@ -74,7 +75,7 @@ var respecConfig = {
   }
   ],
   // The github option allows you associate your specification with a repository on GitHub.
-  github: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie",
+  github: "https://github.com/Logius-standaarden/Digimelding-Koppelvlakspecificatie",
 
   // The URL of your test suite, gets included in the specification's headers.
   // testSuiteURI: "https://portaal.digikoppeling.nl/CV/home.html",
@@ -91,6 +92,13 @@ var respecConfig = {
   // A number indicating the maximum depth of the table of contents. Defaults to 0 which includes all levels.
   // maxTocLevel: 3,
 
+  // PDF version
+  alternateFormats: [
+    {
+      label: "pdf",
+      uri: "Digimelding-Koppelvlakspecificatie.pdf",
+    },
+    ],
   // Shows links to alternate formats (such as PDF, ePub) in the document header.
   // alternateFormats: [{
   //     label: "html",
@@ -109,7 +117,7 @@ var respecConfig = {
 
   // The specification's publish domain, which is used to publish the specification
   // the url in the header thisVersion is generated like `<conf.nl_organisationPublishURL>/<conf.pubDomain>/<specStatus>-<specType.toLowerCase()>-<conf.shortName>}-conf.publishDate>/`
-  pubDomain: "dk",
+  pubDomain: "digimelding",
 
   // Based on the example settings Respec will generate the following links in the header:
   // https://publicatie.centrumvoorstandaarden.nl/dk/ebms/
@@ -125,14 +133,14 @@ var respecConfig = {
 
   // if you use a single document for your spec, which uses more than one markdown H1 header, e.g. '# inleiding'
   // this configuration can be set to make sure that the alle H1 headers and navigation bars are preserved
-  nl_markdownSplitH1sections: true,
+  // nl_markdownSplitH1sections: true,
 
   // in some cases the Repository of a Specification document and the Issue- and PR bases are split
   // thi scan be configured below
   // if not set, the url's will be generated on the respecConfig.github automatically
   nl_github: {
     // issueBase: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/issues",
-    revision: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/commits",
+    revision: "https://github.com/Logius-standaarden/Digimelding-Koppelvlakspecificatie/commits",
     // pullrequests: "https://github.com/Logius-standaarden/DMKS-Koppelvlakspecificatie/Template-Repository/pulls"
   },
 

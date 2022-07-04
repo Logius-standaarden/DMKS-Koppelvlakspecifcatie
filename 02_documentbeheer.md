@@ -10,4 +10,4 @@
 | 14-05-2018  | 1.1    | Logius | RFC Behandelend Bronhouder             |
 | 21-11-2019  | 1.2    | Logius | Zie release notes                      |
 | 24-06-2020  | 1.2.1  | Logius | Tekstuele aanpassingen / correcties    |
-|             |        |        |                                        |
+| 01-06-2021  | 1.3    | Logius | RFC-2020-3 - SSOn-Rijk gebruik in Digimelding Portaal |
